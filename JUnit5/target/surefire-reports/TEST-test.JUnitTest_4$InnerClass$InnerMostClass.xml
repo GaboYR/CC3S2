@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="test.JUnitTest_4$InnerClass$InnerMostClass" time="0.006" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/gabriel/NetBeansProjects/JUnit5/target/test-classes:/home/gabriel/NetBeansProjects/JUnit5/target/classes:/home/gabriel/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/gabriel/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/gabriel/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/gabriel/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/gabriel/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/gabriel/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/gabriel/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://www.azul.com/"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="PE"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="/usr/lib/apache-netbeans/jdk/lib"/>
+    <property name="sun.java.command" value="/home/gabriel/NetBeansProjects/JUnit5/target/surefire/surefirebooter-20230910210611156_3.jar /home/gabriel/NetBeansProjects/JUnit5/target/surefire 2023-09-10T21-06-10_812-jvmRun1 surefire-20230910210611156_1tmp surefire_0-20230910210611156_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="test.JUnitTest_4"/>
+    <property name="surefire.test.class.path" value="/home/gabriel/NetBeansProjects/JUnit5/target/test-classes:/home/gabriel/NetBeansProjects/JUnit5/target/classes:/home/gabriel/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.0/junit-jupiter-api-5.6.0.jar:/home/gabriel/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar:/home/gabriel/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/home/gabriel/.m2/repository/org/junit/platform/junit-platform-commons/1.6.0/junit-platform-commons-1.6.0.jar:/home/gabriel/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.6.0/junit-jupiter-params-5.6.0.jar:/home/gabriel/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.0/junit-jupiter-engine-5.6.0.jar:/home/gabriel/.m2/repository/org/junit/platform/junit-platform-engine/1.6.0/junit-platform-engine-1.6.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/gabriel"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-10-18"/>
+    <property name="java.home" value="/usr/lib/apache-netbeans/jdk"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/gabriel/NetBeansProjects/JUnit5"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/gabriel/NetBeansProjects/JUnit5/target/surefire/surefirebooter-20230910210611156_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.5+8-LTS"/>
+    <property name="user.name" value="gabriel"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="5.15.0-83-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Zulu17.38+21-CA"/>
+    <property name="maven.ext.class.path" value="/usr/lib/apache-netbeans/java/maven-nblib/netbeans-eventspy.jar"/>
+    <property name="localRepository" value="/home/gabriel/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.5"/>
+    <property name="user.dir" value="/home/gabriel/NetBeansProjects/JUnit5"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="java.vm.version" value="17.0.5+8-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testMethod1" classname="test.JUnitTest_4$InnerClass" time="0.026">
+    <system-out><![CDATA[**--- JUnit5Sample4Test :: beforeAll :: Executed once before all test methods ---**
+**--- JUnit5Sample4Test :: beforeEach :: Executed before each test method ---**
+**--- InnerClass :: beforeEach :: Executed before each test method ---**
+**--- InnerClass :: testMethod1 :: Executed test method1 ---**
+**--- InnerClass :: afterEach :: Executed after each test method ---**
+**--- JUnit5Sample4Test :: afterEach :: Executed after each test method ---**
+]]></system-out>
+  </testcase>
+  <testcase name="testMethod2" classname="test.JUnitTest_4$InnerClass$InnerMostClass" time="0.003">
+    <system-out><![CDATA[**--- JUnit5Sample4Test :: beforeEach :: Executed before each test method ---**
+**--- InnerClass :: beforeEach :: Executed before each test method ---**
+**--- InnerMostClass :: beforeEach :: Executed before each test method ---**
+**--- InnerMostClass :: testMethod2 :: Executed test method2 ---**
+**--- InnerMostClass :: afterEach :: Executed after each test method ---**
+**--- InnerClass :: afterEach :: Executed after each test method ---**
+**--- JUnit5Sample4Test :: afterEach :: Executed after each test method ---**
+]]></system-out>
+  </testcase>
+</testsuite>
