@@ -1,6 +1,6 @@
 # Http-Uri
 # Introducción
-![Salida del curl](/home/gabriel/Github/CC3S2/imagen_01.png)
+![Salida del curl](https://github.com/GaboYR/CC3S2/blob/main/Http-Uri/imagen_01.png)
 # Preguntas
 ## ¿Cuáles son las dos diferencias principales que has visto anteriormente y lo que ves en un navegador web 'normal'? ¿Qué explica estas diferencias?
 
