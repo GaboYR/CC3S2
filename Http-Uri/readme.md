@@ -1,5 +1,8 @@
 # Http-Uri
 # Introducción
+Haremos usos de comandos [curl](https://www.hostinger.es/tutoriales/comando-curl ) para actuar como cliente SaaS y [netcat](https://nmap.org/ncat/) ,para actuar como servidor.
+Empezamos abriendo una terminal y ejecutando el siguiente comando : 
+`curl 'http://randomword.saasbook.info'`
 ![Salida del curl](https://github.com/GaboYR/CC3S2/blob/main/Http-Uri/imagen_01.png)
 # Preguntas
 ## ¿Cuáles son las dos diferencias principales que has visto anteriormente y lo que ves en un navegador web 'normal'? ¿Qué explica estas diferencias?
