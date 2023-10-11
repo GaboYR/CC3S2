@@ -14,8 +14,16 @@ Ejecutamos el comando "**rails new rottenpotatoes --skip-test-unit --skip-turbol
 ![Salida del comando rails new rottenpotatoes --skip-test-unit --skip-turbolinks --skip-spring](https://github.com/GaboYR/CC3S2/blob/main/PC_2/images/bundle.png)
 Eso genera un directorio rottenpotatoes:
 
+![a](https://github.com/GaboYR/CC3S2/blob/main/PC_2/images/rotten.png)
+
 Luego, generamos la migracion con el comando **rails generate migration CreateMovies**
+
+![](https://github.com/GaboYR/CC3S2/blob/main/PC_2/images/db%3Amigrate.png)
 
 Seguido, ponemos el comando **rails db:migrate**, y posteriormente **rails db:seed** para migrar y sembrar los datos a la aplicación.
 
+![](https://github.com/GaboYR/CC3S2/blob/main/PC_2/images/migrate.png)
+
 Finalmente, preparamos el heroku para subirlo a remoto.
+
+![](https://github.com/GaboYR/CC3S2/blob/main/PC_2/images/heroku.png)
