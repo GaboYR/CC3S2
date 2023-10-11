@@ -7,4 +7,4 @@ Haremos lo siguiente:
 - De esa forma, por cada contador de valor 0, significa que no aparece en la cadena.
 ![Salida de terminal](https://github.com/GaboYR/CC3S2/blob/main/PC02/pc02_p1.png)
 - Debe mostrar :"Falta f"
-  
+- En mi caso, creo un espacio de 65, por si acaso, para evitar errores de memoria.
