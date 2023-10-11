@@ -8,8 +8,7 @@ def letras_faltantes(s)
         puts "Falta #{('a'.ord + i).chr}"
       end
     end
+    puts cont
   end
-  
   cad = "the quick brown box jumps over a lazy dog"
   letras_faltantes(cad)
-  
