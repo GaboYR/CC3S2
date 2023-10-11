@@ -5,3 +5,4 @@ Haremos lo siguiente:
 - Pero para guardar la frecuencia lo haremos de la forma cont[letra.ord - 'a'.ord], así tenemos un espacio para guardar los valores de la 'a' a 'z'
 - Una vez recorrida la cadena, verificamos cada valor del contador, si tenemos cont[2] = 0 -> eso significa que el caracter 'c' no se encuentra en la cadena.
 - De esa forma, por cada contador de valor 0, significa que no aparece en la cadena.
+![Salida de terminal]{https://github.com/GaboYR/CC3S2/edit/main/PC02/pc02_p1.png}
