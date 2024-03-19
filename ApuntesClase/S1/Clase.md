@@ -78,6 +78,11 @@ El sistema debe ser compatible con diferentes dispositivos y navegadores web.
 
 # -----------------------------------------------------------------------------------------------
 **WRSPM** : 
+
+<p align="center",scale = 0.1>
+  <img src="wrspm.webp" />
+</p>
+
 `WRSPM` Ayuda a comprender y modelar el sistema que estamos desarrollamdo.
 Enfatiza que para crear sol efectiva se debe considerar el entorno.
 `mapping` traduccion de los inputs al output de la maquina
