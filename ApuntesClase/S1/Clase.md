@@ -79,7 +79,7 @@ El sistema debe ser compatible con diferentes dispositivos y navegadores web.
 # -----------------------------------------------------------------------------------------------
 **WRSPM** : 
 
-<p align="center",scale = 0.1>
+<p align="center">
   <img src="wrspm.webp" />
 </p>
 
