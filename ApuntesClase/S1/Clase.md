@@ -100,9 +100,59 @@ incorporada en sus componentes, sus relaciones entre sí y con el entorno
 y los principios que guían su diseño y evolución.
 Es un proceso y producto, representacion de alto nivel.
 Puente entre el codigo y los requisitos.
-## Proceso de arquitectura de software
+## Proceso de arquitectura de software (Falta agregar ideas)
 1. Análisis de requisitos
 2. Estructura del sistema
 3. Selección de patrones arquitectónicos
 4. Definición de los componentes
 5. Evaluación y validación
+
+## Dia miercoles
+Conceptos : abstraccion, encapslamiento, cohesion, cohesion de partes interesadas.
+Dise;o de software :  proceso de conceptualizacion de resolucion de un problema.Establece como va a funcionar el sistema a nivel de modulo y nvel de componentes y sus interacciones.Identificacion de requisitos, se busca la escalabilidad.
+
+Eficiencia : el software realiza tareas rapida con recursos minimos.
+
+Mantenibilidad :  el software es facilmente actualizable o modificable.
+
+Escalabilidad : el software debe manejar el aumento de cargas de trabajo sin reducir su rendimiento.
+
+Palabras clave : especificacion de requisitos y el documento de dise;o especifica una solucion particular al problema.
+
+Abstraccion : tecnica que permite concentrarse en las caracterisica de un componente del sistema, sencillas para el usuario(no expone la complejidad del sistema).
+
+Interfaz :  forma de comunicarse entre el usuario y el programa
+
+abstraccion procedimental : oculta la complejidad del sistema a traves de una interfaz.
+
+Abstraccion de control : simplificacion de flujos de control mediante una estructuracion de software.
+
+Modularidad : el grado en que los componentes de un sistema estan separados
+
+- Descomponibilidad : La medida en que el problema se puede dividir en subproblemas con relaciones
+simples.
+
+- Componibilidad : La medida en que las soluciones modulares a los subproblemas se pueden
+ensamblar como una solución al problema completo.Los modulos deben ser reutilizables.
+
+Acoplamiento : es la interdependencia entre modulos, es conveniente que en un sistema los modulos deben estar en una relacion de bajo acoplamiento, de esta forma hay una mayor independencia.
+
+*Un bajo acoplamiento facilita la flexibilidad y la mantenibilidad.*
+
+Contrato :  busca que las precondiciones esten de acuerdo con las postcondiciones.
+
+Precondicion :  
+
+Postcondicion : 
+
+Cohesion : el grado en el que los componentes del modulo estan conectados.
+
+Alta cohesion :  modulo bien enfocado
+
+Evitar el **DRY(Dont repeat yourself)**.
+
+
+
+
+
+
