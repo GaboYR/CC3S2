@@ -84,3 +84,20 @@ Cutover: Cambiar a los usuarios o el tráfico de un sistema antiguo a uno nuevo.
 
 ***Leer diapo***
 
+TestCase : casos de prueba.
+Es necesario un plan de pruebas para guiar el proceso de pruebas.
+Formas de trababar las pruebas : black box testing, white box testing
+
+WBT : Tienes la imagen y sases como que pieza va en el lugar adecuado, cuado los modulos intentan unirse.
+
+BBT : Es como intetnar resolver un rompecabezas sin tener la imagen, como lo hace.
+
+Pruebas de integracion:
+
+Pruebas de regresion : 
+
+QA : aseguramiento de calidad, busca perfeccionar para evitar errores desde el principio.
+QC : esta en el medio y enfrentandose a los problemas cadad vez que surgan.
+
+Prueba no funcional : experiencia optima.
+
