@@ -33,3 +33,24 @@ Es un metodo de marcado que se va a ejecutar antes de ejecutar cada metodo de pr
 `TDD` : construyes la prueba de trabajo
 
 `BDD` : 
+
+## Dia miercoles
+`AAA` :
+Arrange (tear down)
+
+Act(Ejecucion de los metodos del SUT)
+
+Assert(Verificar)
+
+Palabras clave : despliegue, rollback(planes), cutover , Blue-green deployment,canary release.
+
+Despliegue : el software se pone a disposicion de los usuarios finales, puede encontrar problemas en el entorno.
+
+Rollback : permite retrocedeer a una version anterior de software, reduciendo el impacto de da;o(recuperacion ante fallos)
+
+Cutover : Similar a un backup, es un plan detallado en caso de encontrar un problema en el camino.
+
+Equilibrio de carga.
+
+***Leer diapo***
+
