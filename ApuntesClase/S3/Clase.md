@@ -41,3 +41,19 @@ Centrada en eficiencia, elimina cualquier cosa que no agrege valor al cliente.En
 Produce un objeto minimo viable (MVP) para aprender rapidamente el mercado.
 
 Ciclo `contruir-medir-aprender`.
+
+## Historias de usuario
+Basicamente es `Que quiere el cliente` , por lo general es un lenguaje sencillo entendible para el cliente.
+Historias de usuario se guardan en un backlog de cliente (SCRUM).
+Escritas por el Product Owner, las descripciones suelen seguir una plantilla.
+
+## Criterios de aceptacion
+
+## BDD
+
+## GWT 
+Given-When-Then(dado-cuando-entonces)
+
+## Pruabas de aceptacion
+
+
