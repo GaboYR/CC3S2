@@ -3,7 +3,6 @@ package org.example;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class ClientTest {
     private Address address = new Address("street A");

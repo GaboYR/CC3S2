@@ -3,8 +3,6 @@ package org.example;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
