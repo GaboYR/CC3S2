@@ -7,9 +7,7 @@ en el desarrollo de software. Se espera que los participantes comprendan cómo e
 
 ## Prerequisitos 🤔
 
-Utiliza el código entregado en el repositorio de apoyo del curso:
-
-![Link here](https://github.com/kapumota/Actividades-CC3S2/tree/main)
+Utiliza el código entregado en el repositorio de apoyo del curso [Link](https://github.com/kapumota/Actividades-CC3S2/tree/main)
 
 ## Entregable
 
@@ -43,9 +41,9 @@ expresivos y legibles para realizar afirmaciones en las pruebas unitarias.
 
 ![a](readmeImages/Image1.jpeg)
 
-    Solucion:
+- Solucion:
   
-:point_right: El `SUT` recibe un input de `DOC` porque este brinda herramientas para que el `SUT` realice sus funciones sobre `Test Class`, y el `SUT` genera un output que se aplica a un `Test Class` en este caso, luego el `Test Class` arroja un resultado que es esperado por el `SUT`, y a su vez, por el `DOC`.
+    :point_right: El `SUT` recibe un input de `DOC` porque este brinda herramientas para que el `SUT` realice sus funciones sobre `Test Class`, y el `SUT` genera un output que se aplica a un `Test Class` en este caso, luego el `Test Class` arroja un resultado que es esperado por el `SUT`, y a su vez, por el `DOC`.
 
 2. Imaginemos algún servicio financiero (clase FinancialService) que, en función del último pago del cliente y su tipo (cualquiera que sea), calcula algún "bonus".
    
@@ -65,25 +63,25 @@ Identifica el SUT y sus colaboradores (DOC) y describe los tipos de interacción
 
 - Solucion:
 
-`SUT` : El metodo `calculateBonus()` contenido en la clase `FinancialService`.
+    `SUT` : El metodo `calculateBonus()` contenido en la clase `FinancialService`.
 
-`DOC(s)` : Podemos ver que el metodo `calculateBonus` requiere de `clientDAO` y `calculator`,es decir, ambas clases brindan herramientas a `calculateBonus()` realice funciones sobre `FinancialService`.
+    `DOC(s)` : Podemos ver que el metodo `calculateBonus` requiere de `clientDAO` y `calculator`,es decir, ambas clases brindan          herramientas a `calculateBonus()` realice funciones sobre `FinancialService`.
 
-`Interacciones` en `calculateBonus` : vemos que se invoca a `clientDAO.getClientType(clientID)` para obtener el tipo de cliente y a `calculator.calculateBonus(clientType,payment)` para calcular `bonus` segun el monto y el tipo de cliente.
+    `Interacciones` en `calculateBonus` : vemos que se invoca a `clientDAO.getClientType(clientID)` para obtener el tipo de cliente y a `calculator.calculateBonus(clientType,payment)` para calcular `bonus` segun el monto y el tipo de cliente.
 Por ultimo, vemos que se invoca a `clientDAO.savebonusHistory(clientID,bonus)` para guardar el bonus.
 
 3. Sea la abstraccion siguiente:
-   !["image2"](/Actividad-PrimeraPruebaJUnit5/readmeImages/Image2.png)
+   ![image2](/Actividad-PrimeraPruebaJUnit5/readmeImages/Image2.png)
 ¿Como crees que serían las pruebas de los trabajos y la de los gerentes? ¿Por qué preocuparse por las interacciones indirectas?
 
 - Solucion
 
-Las pruebas de trabajo y gerentes deben verificar si cada clase se comporta o actua como se espera.
+    Las pruebas de trabajo y gerentes deben verificar si cada clase se comporta o actua como se espera.
 
-Las interacciones indirectas son importantes, si bien una clase puede funcionar de forma aislada, puede generar inconventientes al momento de interactuar con otras clases.
+    Las interacciones indirectas son importantes, si bien una clase puede funcionar de forma aislada, puede generar inconventientes al         momento de interactuar con otras clases.
 
 4. Completa en la actividad dada en el repositorio el código fuente para pasar las pruebas.
-Actividad completada, ver en .
+Actividad completada, ver en [Actividad JUnit5](https://github.com/GaboYR/CC3S2/tree/main/Actividad-PrimeraPruebaJUnit5).
 
 5. ¿Cuál es la diferencia entre una prueba unitaria y otros tipos de pruebas, como las pruebas de
 integración o las pruebas de aceptación?
@@ -95,4 +93,5 @@ Algunas comparaciones:
 - Pruebas de aceptacion : se enfoca en la funcionalidad completa del software, es la parte final.
 
 Podemos decir que el desarrollo de estas pruebas se dan en el orden: 
+
 > Prueba unitaria :arrow_right: Prueba de integracion :arrow_right: Prueba de aceptacion
