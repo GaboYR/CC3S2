@@ -46,7 +46,7 @@ expresivos y legibles para realizar afirmaciones en las pruebas unitarias.
     :point_right: El `SUT` recibe un input de `DOC` porque este brinda herramientas para que el `SUT` realice sus funciones sobre `Test Class`, y el `SUT` genera un output que se aplica a un `Test Class` en este caso, luego el `Test Class` arroja un resultado que es esperado por el `SUT`, y a su vez, por el `DOC`.
 
 2. Imaginemos algún servicio financiero (clase FinancialService) que, en función del último pago del cliente y su tipo (cualquiera que sea), calcula algún "bonus".
-   
+
 ```java
 public class FinancialService {
 .... // definition of fields and other methods omitted
@@ -89,10 +89,11 @@ integración o las pruebas de aceptación?
 
 Algo que tienen en comun estas pruebas es que todas esperan cumplir con lo esperado por las partes interesadas.
 Algunas comparaciones:
+
 - Prueba unitaria: se enfoca en partes del codigo de forma aislada.
 - Prueba de integracion: se enfoca en un correcto funcionamiento entre diferentes modulos del sistema.
 - Pruebas de aceptacion : se enfocan en la funcionalidad completa del software, es la parte final.
 
-Podemos decir que el desarrollo de estas pruebas se dan en el orden: 
+Podemos decir que el desarrollo de estas pruebas se dan en el orden:
 
 > Prueba unitaria :arrow_right: Prueba de integracion :arrow_right: Prueba de aceptacion
