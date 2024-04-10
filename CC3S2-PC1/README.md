@@ -1,1 +1,0 @@
-# Practica calificada 1
