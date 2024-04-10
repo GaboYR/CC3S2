@@ -10,7 +10,7 @@ Seguimos las instrucciones para desarrollar el trabajo `AAA`.
 
 a. Creamos un proyecto `gradle` en una carpeta `Actividad-AAA`.
 
-![createGradle](/readmeImages/createGradle.png)
+![createGradle](https://github.com/GaboYR/CC3S2/blob/main/Actividad-AAA/readmeImages/createGradle.png)
 
 Agregamos el contenido del `build.gradle`
 
@@ -357,8 +357,8 @@ Independientemente del editor o IDE que uses, puedes usar la terminal y ejecutar
 
 Veremos lo siguiente:
 
-![Gradlew](/readmeImages/gradlew.png)
+![Gradlew](https://github.com/GaboYR/CC3S2/blob/main/Actividad-AAA/readmeImages/gradlew.png)
 
 En Visual Studio Code, si usamos la extension `Java Runner`, podemos correr la clase `CalculatorTest.java` y ver lo siguiente:
 
-![allTests](/readmeImages/showTest.png)
+![allTests](https://github.com/GaboYR/CC3S2/blob/main/Actividad-AAA/readmeImages/showTest.png)
