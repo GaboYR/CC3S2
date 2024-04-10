@@ -81,6 +81,7 @@ Por ultimo, vemos que se invoca a `clientDAO.savebonusHistory(clientID,bonus)` p
     Las interacciones indirectas son importantes, si bien una clase puede funcionar de forma aislada, puede generar inconventientes al         momento de interactuar con otras clases.
 
 4. Completa en la actividad dada en el repositorio el código fuente para pasar las pruebas.
+
 Actividad completada, ver en [Actividad JUnit5](https://github.com/GaboYR/CC3S2/tree/main/Actividad-PrimeraPruebaJUnit5).
 
 5. ¿Cuál es la diferencia entre una prueba unitaria y otros tipos de pruebas, como las pruebas de
@@ -88,9 +89,9 @@ integración o las pruebas de aceptación?
 
 Algo que tienen en comun estas pruebas es que todas esperan cumplir con lo esperado por las partes interesadas.
 Algunas comparaciones:
-- Prueba unitaria: se enfocan en partes del codigo de forma aislada.
-- Prueba de integracion: se enfocan en un correcto funcionamiento entre diferentes modulos del sistema.
-- Pruebas de aceptacion : se enfoca en la funcionalidad completa del software, es la parte final.
+- Prueba unitaria: se enfoca en partes del codigo de forma aislada.
+- Prueba de integracion: se enfoca en un correcto funcionamiento entre diferentes modulos del sistema.
+- Pruebas de aceptacion : se enfocan en la funcionalidad completa del software, es la parte final.
 
 Podemos decir que el desarrollo de estas pruebas se dan en el orden: 
 
