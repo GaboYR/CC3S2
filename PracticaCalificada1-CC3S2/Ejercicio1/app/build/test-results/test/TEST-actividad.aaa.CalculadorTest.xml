@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="actividad.aaa.CalculadorTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2024-04-10T13:24:23" hostname="192" time="0.081">
+  <properties/>
+  <testcase name="testMultiplicacion_NegativeNumbers_ShouldReturnCorrectMultiplication()" classname="actividad.aaa.CalculadorTest" time="0.025"/>
+  <testcase name="testDivision_PositiveNumbers_ShouldReturnCorrectDivision()" classname="actividad.aaa.CalculadorTest" time="0.007"/>
+  <testcase name="testDivision_DivisionByZero_ShouldThrowException2()" classname="actividad.aaa.CalculadorTest" time="0.006"/>
+  <testcase name="testDivision_DivisionByZero_ShouldThrowException3()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <testcase name="testDivision_DivisionByZero_ShouldThrowException4()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <testcase name="testDivision_DivisionByZero_ShouldThrowException5()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <testcase name="testRestar_PositiveNumbers_ShouldReturnCorrectSubtraction()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <testcase name="testDivision_PositiveAndNegativeNumbers_ShouldReturnCorrectDivision()" classname="actividad.aaa.CalculadorTest" time="0.002"/>
+  <testcase name="testSum_NegativeNumbers_ShouldReturnCorrectSum()" classname="actividad.aaa.CalculadorTest" time="0.002"/>
+  <testcase name="testMultiplicacion_PositiveNumbers_ShouldReturnCorrectMultiplication()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <testcase name="testRestar_NegativeNumbers_ShouldReturnCorrectSubtraction()" classname="actividad.aaa.CalculadorTest" time="0.002"/>
+  <testcase name="testMultiplicacion_PositiveAndNegativeNumbers_ShouldReturnCorrectMultiplication()" classname="actividad.aaa.CalculadorTest" time="0.0"/>
+  <testcase name="testSum_PositiveNumbers_ShouldReturnCorrectSum()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <testcase name="testSum_PositiveAndNegativeNumbers_ShouldReturnCorrectSum()" classname="actividad.aaa.CalculadorTest" time="0.002"/>
+  <testcase name="testDivision_NegativeNumbers_ShouldReturnCorrectDivision()" classname="actividad.aaa.CalculadorTest" time="0.003"/>
+  <testcase name="testDivision_DivisionByZero_ShouldThrowException()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <testcase name="testRestar_PositiveAndNegativeNumbers_ShouldReturnCorrectSubtraction()" classname="actividad.aaa.CalculadorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
