@@ -1,0 +1,6 @@
+*.out
+*.lock
+*.bin
+*.class
+#Comentario de prueba
+
