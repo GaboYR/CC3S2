@@ -6,7 +6,7 @@ Seguimos las instrucciones para desarrollar el trabajo `AAA`.
 
 a. Creamos un proyecto `gradle` en una carpeta `Actividad-AAA`.
 
-![createGradle]()
+![createGradle](/PracticaCalificada1-CC3S2/Ejercicio1/readmeImages/Gradlew.png)
 
 Agregamos el contenido del `build.gradle`
 
@@ -354,4 +354,4 @@ Independientemente del editor o IDE que uses, puedes usar la terminal y ejecutar
 
 Ejecucion de las pruebas :
 
-![allTest](/Ejercicio1/readmeImages/allTest.png)
+![allTest](/PracticaCalificada1-CC3S2/Ejercicio1/readmeImages/allTest.png)
