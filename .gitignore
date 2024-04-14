@@ -2,5 +2,6 @@
 *.lock
 *.bin
 *.class
+*.jar
 #Comentario de prueba
 
