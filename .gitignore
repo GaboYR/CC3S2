@@ -4,5 +4,11 @@
 *.class
 *.jar
 *.probe
+# Ignorar directorios de Gradle
+**/.gradle/
+
+# Ignorar archivos específicos generados por Gradle
+*.lock
+file-system.probe
 #Comentario de prueba
 
