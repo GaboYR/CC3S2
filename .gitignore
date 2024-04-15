@@ -10,5 +10,8 @@
 # Ignorar archivos específicos generados por Gradle
 *.lock
 file-system.probe
+
+# Ignorar archivos de configuración de Gradle
+#git rm --cached -r Actividad-PrimeraPruebaJUnit5/.gradle/
 #Comentario de prueba
 
