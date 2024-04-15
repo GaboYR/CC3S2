@@ -3,5 +3,6 @@
 *.bin
 *.class
 *.jar
+*.probe
 #Comentario de prueba
 
