@@ -1,6 +1,10 @@
 package ejercicio3;
-import cucumber.api.java.en.When;
 
+import io.cucumber.junit.CucumberOptions;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
+import io.cucumber.junit.Cucumber;  
 public class Stepdefs {
 	// NOTE: because the regular expressions are within 
 	// Java strings, we have to make all backslashes double backslashes

@@ -22,6 +22,10 @@ dependencies {
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'
+    
+    // Cucumber for BDD
+    testImplementation 'io.cucumber:cucumber-java:7.16.1'
+    testImplementation 'io.cucumber:cucumber-junit:7.16.1'
 }
 
 application {
@@ -32,4 +36,12 @@ application {
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+// Configure the test task to use JUnit Platform (JUnit 5)
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+        showStandardStreams = true
+    }
 }

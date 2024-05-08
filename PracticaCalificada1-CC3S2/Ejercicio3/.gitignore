@@ -1,0 +1,3 @@
+# Ignore files .bin and .lock
+*.bin
+*.lock
