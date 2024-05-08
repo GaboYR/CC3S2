@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="skeleton.RunCukesTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-05-08T00:18:50" hostname="192" time="0.059">
+  <properties/>
+  <testcase name="eaten many cukes and growl" classname="skeleton.RunCukesTest" time="0.048"/>
+  <testcase name="eaten many cukes and not growl" classname="skeleton.RunCukesTest" time="0.003"/>
+  <testcase name="eaten few cukes and not growl #1" classname="skeleton.RunCukesTest" time="0.002"/>
+  <testcase name="eaten few cukes and not growl #2" classname="skeleton.RunCukesTest" time="0.003"/>
+  <system-out><![CDATA[I'm eating 11 cukes!
+I ate 11 cucumbers.
+I waited 2 hours.
+I'm eating 11 cukes!
+I ate 11 cucumbers.
+I waited 1 hours.
+I'm eating 10 cukes!
+I ate 10 cucumbers.
+I waited 2 hours.
+I'm eating 10 cukes!
+I ate 10 cucumbers.
+I waited 1 hours.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

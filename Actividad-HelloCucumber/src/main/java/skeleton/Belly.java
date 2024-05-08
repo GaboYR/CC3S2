@@ -15,6 +15,7 @@ public class Belly {
     }
     
 	public void wait(int timeInHours) {
+		System.out.println("I waited " + timeInHours + " hours.");
 		if (timeInHours > 0) { 
 			timeWaited += timeInHours;
 		}
