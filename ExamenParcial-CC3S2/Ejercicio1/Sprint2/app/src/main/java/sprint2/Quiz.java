@@ -1,4 +1,4 @@
-package sprint1;
+package sprint2;
 
 import java.util.ArrayList;
 import java.util.Scanner;

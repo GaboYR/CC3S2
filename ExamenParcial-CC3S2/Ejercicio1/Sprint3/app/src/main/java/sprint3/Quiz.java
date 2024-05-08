@@ -1,4 +1,4 @@
-package sprint1;
+package sprint3;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -25,9 +25,10 @@ public class Quiz {
         while (cont < Questions.size()) {
             System.out.println(Questions.get(cont).getQuestion());
             System.out.println(Questions.get(cont).getOptions());
+            System.out.println("Ingrese su respuesta: ");
             int respuesta = scanner.nextInt();
             while (respuesta < 0 && respuesta > 4) {
-                System.out.println("Opcion fuera de rango, por favor seleccione una opcion valida");
+                System.out.println("Opcion fuera de rango, por favor seleccione una opcion valida(1-4)");
                 respuesta = scanner.nextInt();
             }
             if (Questions.get(cont).getAnswer() == respuesta) {
@@ -43,6 +44,12 @@ public class Quiz {
             System.out.println("Felicidades, has ganado!");
         } else {
             System.out.println("Sigue intentando");
+        }
+        System.out.println("----------------------------");
+        System.out.println("Respuestas correctas:");
+        for(Question q : Questions){
+            q.showQuestion();
+            System.out.println("Respuesta correcta: " + q.getAnswer());
         }
     }
 }
