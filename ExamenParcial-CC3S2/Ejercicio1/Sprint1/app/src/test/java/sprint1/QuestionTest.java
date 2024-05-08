@@ -1,6 +1,8 @@
 package sprint1;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 public class QuestionTest {
     
     public boolean answerInRange1to4(int answer) {
@@ -15,4 +17,6 @@ public class QuestionTest {
         assertEquals(answerInRange1to4(0), false);
         assertEquals(answerInRange1to4(5), false);
     }
+    
+    
 }
