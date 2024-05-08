@@ -2,3 +2,5 @@
 *.bin
 *.lock
 *.class
+# Ignore files .class from the directory app/build/
+app/build/*.class
