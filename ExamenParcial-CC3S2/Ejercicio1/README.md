@@ -65,7 +65,7 @@ public class Quiz {
 ```
 
 Salida en consola:
-![Salida](//Ejercicio1/images/sprint1p1-1.png)
+![Salida](/ExamenParcial-CC3S2/Ejercicio1/images/sprint1p1-1.png)
 
 Para validar la entrada de usuario, agregamos estas lineas 
 
@@ -99,7 +99,7 @@ public class QuestionTest {
 Es claro que las dos ultimas fallaran porque deben estar en el rango de 1 a 4.
 Salida de pruebas:
 
-![Pruebas](/Ejercicio1/images/sprint1p1-2.png)
+![Pruebas](/ExamenParcial-CC3S2/Ejercicio1/images/sprint1p1-2.png)
 
 ### Sprint 2
 
