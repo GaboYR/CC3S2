@@ -1,11 +1,11 @@
 # Actividad Hello-Cucumber
 
 Primero ejecutamos la instruccion `./gradlew build`.
-!["build"](/images/build.png)
+![build, scale = 0.8](/Actividad-HelloCucumber/images/build.png)
 
 Para solucionar este problema escribimos en la terminal `chmod +x ./gradlew`
 
-![chmod](/images/chmod.png)
+![chmod](/Actividad-HelloCucumber/images/chmod.png)
 
 Tenemos la clase `Belly.java`.
 
@@ -48,7 +48,7 @@ Dentro del archivo `belly.feature` encontraremos diversos escenarios, uno de eje
 
 Y de acuerdo a esta tabla :
 
-![table](/images/feature.png)
+![table](/Actividad-HelloCucumber/images/feature.png)
 
 Agregamos escenarios al archivo `belly.feature` y en la terminal compilamos mediante `./gradlew test`.
 Esto generara una salida en la terminal, para ver esta salida y agregarla al readme podemos usar esta instruccion `./gradlew.test >> README.md`.
