@@ -13,10 +13,10 @@ Usuario = {}
 UsuarioModulo = {}
 ```
 
-Despues de revisar las interdependencias entre modulos obtenemos los sigueiten
+Despues de revisar las interdependencias entre modulos obtenemos los siguiente
 
 ```dot
-digraph G {
+digraph G{
     ContactoOperandoModulo->Usuario;
     GrupoContactoModulo->Usuario;
     SistemaContacto->ContactoOperandoModulo;
