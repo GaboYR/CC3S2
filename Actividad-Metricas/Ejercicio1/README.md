@@ -75,4 +75,5 @@ digraph G{
 ### Inestabilidad
 
 **I=(Ce/(Ca+ Ce))**
+**I=7/14 = 0.5**
 
