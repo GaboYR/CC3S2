@@ -26,6 +26,8 @@ digraph G{
     UsuarioModulo->Usuario;
 }
 ```
+![](/Actividad-Metricas/Ejercicio1/GrafoJava.png)
+
 
 ### Analisis del grafico
 
