@@ -78,7 +78,7 @@ public void printAllDepartments() {
 
 Salida en consola:
 
-![](/images/ej1i1.png)
+![](/Actividad-Refactorizacion/images/ej1i1.png)
 
 ## Ejercicio 2: aplicación de patrones de diseño para refactorización
 
