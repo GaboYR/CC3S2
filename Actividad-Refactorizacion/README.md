@@ -101,7 +101,7 @@ public static void main(String[] args) {
 
 Salida en consola:
 
-![imagen](/images/ej1i1.png)
+![imagen](/Actividad-Refactorizacion/images/ej1i1.png)
 
 ### Analisis del LCOM
 
@@ -225,6 +225,12 @@ public class EmployeeManager {
 }
 
 ```
+
+Salida en consola:
+
+![](/Actividad-Refactorizacion/images/ej1i2.png)
+
+Notamos que la salida en consola tanto para el codigo original y el refactorizado devuelven el mismo resultado, 
 
 ## Ejercicio 2: aplicación de patrones de diseño para refactorización
 

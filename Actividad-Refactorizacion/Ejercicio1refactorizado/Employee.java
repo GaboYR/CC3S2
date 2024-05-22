@@ -1,5 +1,4 @@
 package Ejercicio1refactorizado;
-
 public class Employee {
     private String nombre;
     private String departamento;
