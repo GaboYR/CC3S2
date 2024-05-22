@@ -27,7 +27,7 @@ public class EmployeeManager {
         //databaseEmployees.replace(employeeName, newDepartment);  
         //databaseEmployees.remove(employeeName);
         databaseEmployees.remove(new Employee(employeeName, null));
-        // System.out.println("Departamento cambiado");
+        System.out.println("Departamento cambiado");
     }
 
     public void printDepartmentReport(String department) {
@@ -40,6 +40,11 @@ public class EmployeeManager {
                 System.out.println(employees);
             }
         }*/
+        for (Employee employee : databaseEmployees) {
+            if (employee.getDepartamento().equals(department)) {
+                System.out.println(employee.getNombre());
+            }
+        }
     }
 
     public void printAllDepartments() {
@@ -54,6 +59,13 @@ public class EmployeeManager {
             System.out.println(deps);
         }
         */
+        HashSet<String> depas = new HashSet<>();
+        for (Employee employee : databaseEmployees) {
+            depas.add(employee.getDepartamento());
+        }
+        for (String deps : depas) {
+            System.out.println(deps);
+        }
     }
     public static void main(String[] args) {
         EmployeeManager employeeManager = new EmployeeManager();
@@ -70,6 +82,7 @@ public class EmployeeManager {
         // print department report
         employeeManager.printDepartmentReport("Ventas");
         employeeManager.printDepartmentReport("RR HH");
+        employeeManager.printDepartmentReport("Marketing");
         // print all dep
         employeeManager.printAllDepartments();
     }
