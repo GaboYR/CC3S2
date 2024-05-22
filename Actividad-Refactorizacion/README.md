@@ -76,9 +76,32 @@ public void printAllDepartments() {
 }
 ```
 
+Funcion *main*:
+
+```java
+public static void main(String[] args) {
+        EmployeeManager employeeManager = new EmployeeManager();
+        // Add employees
+        employeeManager.addEmployee("Juan", "Ventas");
+        employeeManager.addEmployee("Pedro", "Ventas");
+        employeeManager.addEmployee("Maria", "Marketing");
+        employeeManager.addEmployee("Carlos", "Ventas");
+        employeeManager.addEmployee("Beto", "RR HH");
+        // Remove employees
+        employeeManager.removeEmployee("Pedro");
+        // Change departament
+        employeeManager.changeDepartment("Juan", "RR HH");
+        // print department report
+        employeeManager.printDepartmentReport("Ventas");
+        employeeManager.printDepartmentReport("RR HH");
+        // print all dep
+        employeeManager.printAllDepartments();
+    }
+```
+
 Salida en consola:
 
-![](/images/ej1i1.png)
+![a](/Actividad-Refactorizacion/images/ej1i1.png)
 
 ## Ejercicio 2: aplicación de patrones de diseño para refactorización
 
