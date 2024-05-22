@@ -43,7 +43,7 @@ public void changeDepartment(String employeeName, String newDepartment) {
 }
 ```
 
-Metodo `printDepartmentReport` : 
+Metodo `printDepartmentReport` :
 
 ```java
 public void printDepartmentReport(String department) {
@@ -102,6 +102,8 @@ public static void main(String[] args) {
 Salida en consola:
 
 ![imagen](/images/ej1i1.png)
+
+### Analisis del LCOM
 
 ## Ejercicio 2: aplicación de patrones de diseño para refactorización
 
