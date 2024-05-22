@@ -101,7 +101,7 @@ public static void main(String[] args) {
 
 Salida en consola:
 
-![](/images/ej1i1.png)
+![imagen](/images/ej1i1.png)
 
 ## Ejercicio 2: aplicación de patrones de diseño para refactorización
 
