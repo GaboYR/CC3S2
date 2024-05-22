@@ -228,9 +228,9 @@ public class EmployeeManager {
 
 Salida en consola:
 
-![](/Actividad-Refactorizacion/images/ej1i2.png)
+![imagen1](/Actividad-Refactorizacion/images/ej1i2.png)
 
-Notamos que la salida en consola tanto para el codigo original y el refactorizado devuelven el mismo resultado, 
+Notamos que la salida en consola tanto para el codigo original y el refactorizado devuelven el mismo resultado, sin embargo la legibilidad y la eficiencia ha mejorado ligeramente.
 
 ## Ejercicio 2: aplicación de patrones de diseño para refactorización
 
