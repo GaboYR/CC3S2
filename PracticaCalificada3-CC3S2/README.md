@@ -231,4 +231,75 @@ Salida en consola :
 
 El feedback al jugador ha sido implementado.
 
+### MEtricas de codigo
+
+> **CAMC**
+> Para clase HintGenerator
+
+```java
+public String generateHint(String word)
+public String generateHint(String word, String guess) 
+public String showChars (String word, String guess) 
+```
+- 3 metodos
+- metodo generateHint(1 tipo unico)
+- metodo generateHint(2 tipos) *funcion sobrecargada*
+- metodo showchars(2 tipos) 
+- Suma = 5
+  metodos = 3
+  maximo de paramtro por metodo = 2
+  **CAMC** = 5 /(3 * 2) = 0.866666
+CAMC cercano a 1, alta cohesion.
+
 ## Sprint 3
+
+Implementacion de interfaces para `WordSelector` y `HintGenerator`.
+
+En clase HintGenerator
+
+```java
+public class HintGenerator implements IHintGenerator  {
+    // Mostrar el tama;o de la palabra
+    public String generateHint(String word) {
+        return "_ ".repeat(word.length());
+    }
+    // Mostrar la palabra con las letras acertadas y en su posicion
+    public String generateHint(String word, String guess) {
+        String hint = "";
+        // si la palabra contiene la letra
+        for (int i = 0; i < word.length(); i++) {
+            if (guess.contains(String.valueOf(word.charAt(i)))) {
+                hint += word.charAt(i) + " ";
+            } else {
+                hint += "_ ";
+            }
+        }
+        return hint;
+    }
+    ...
+```
+
+En clase WordSelector
+
+```java
+public class WordSelector implements IWordSelector{
+    // Array de palabras
+    private final String[] words = {"avion","hola", "adios", "casa", "coche", "perro", "gato", "raton", "elefante", "caballo", "pajaro"};
+    // Método para seleccionar una palabra aleatoria
+    public String selectWord() {
+        int index = (int) (Math.random() * words.length);
+        return words[index];
+    }
+    ...
+```
+
+En clase game
+
+```java
+public class Game {
+    private IWordGenerator wordSelector;
+    private IHintGenerator hintGenerator;
+    private final String word;
+    private final String hint;
+    ...
+```
