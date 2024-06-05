@@ -1,11 +1,13 @@
 package main.java.sprint3;
+import main.java.sprint3.IWordSelector;
+import main.java.sprint3.IHintGenerator;
 public class Game {
     private IWordGenerator wordSelector;
     private IHintGenerator hintGenerator;
     private final String word;
     private final String hint;
     private int attempts;
-    public Game(WordSelector wordSelector, HintGenerator hintGenerator) {
+    public Game(IWordSelector wordSelector, IHintGenerator hintGenerator) {
         this.wordSelector = wordSelector;
         this.hintGenerator = hintGenerator;
         this.word = wordSelector.selectWord();
@@ -32,8 +34,8 @@ public class Game {
     public static void main(String[] args) {
         System.out.println("Adivina la palabra secreta");
         System.out.println("Tienes 5 intentos");
-        WordSelector wordSelector = new WordSelector();
-        HintGenerator hintGenerator = new HintGenerator();
+        IWordSelector wordSelector = DependencyInjector.wordSelector();
+        IHintGenerator hintGenerator = DependencyInjector.hintGenerator();
         Game game = new Game(wordSelector, hintGenerator);
         game.start();
     }

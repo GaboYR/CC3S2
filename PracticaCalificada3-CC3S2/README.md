@@ -303,3 +303,31 @@ public class Game {
     private final String hint;
     ...
 ```
+
+Agregando DependencyInjector
+
+```java
+public class DependencyInjector {
+    public static IHintGenerator hintGenerator() {
+        return new HintGenerator();
+    }
+    public static IWordSelector wordSelector() {
+        return new WordSelector();
+    }
+}
+```
+
+Modificando clase Game
+
+```java
+public static void main(String[] args) {
+        System.out.println("Adivina la palabra secreta");
+        System.out.println("Tienes 5 intentos");
+        IWordSelector wordSelector = DependencyInjector.wordSelector();
+        IHintGenerator hintGenerator = DependencyInjector.hintGenerator();
+        Game game = new Game(wordSelector, hintGenerator);
+        game.start();
+    }
+```
+
+### Principios SOLID
