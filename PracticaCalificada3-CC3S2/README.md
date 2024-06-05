@@ -166,3 +166,69 @@ LCOM = 0
 ![coverage](/PracticaCalificada3-CC3S2/images/coverageS1.png)
 
 ## Sprint 2
+
+Vamos a reutilizar lo implementado en el sprint1 y le agregaremos las nuevas funcionalidades.
+
+### Logica del juego
+
+Para que el juego se haga mas atractivo, vamos a realizar lo siguiente:
+Dentro de la clase `HintGenerator` agregaremos esta funcion que mostrara si la palabra ingresada tiene caracteres que coicidadn con la palabra del juego
+Si el caracter coincide con la posicion y esta en la palabra, se mostrara.
+Si el caracter coincide en la palabra pero no en la posicion, se mostrara en un apartado para que puedas investigar donde esta la palabra.
+```java
+// Mostrar la palabra con las letras acertadas y en su posicion
+    public String generateHint(String word, String guess) {
+        String hint = "";
+        // si la palabra contiene la letra
+        for (int i = 0; i < word.length(); i++) {
+            if (guess.contains(String.valueOf(word.charAt(i)))) {
+                hint += word.charAt(i) + " ";
+            } else {
+                hint += "_ ";
+            }
+        }
+        return hint;
+    }
+    // Funcion que muestra las letras que se han acertado
+    // pero no estan en su posicion 
+    public String showChars (String word, String guess) {
+        String chars = "";
+        for (int i = 0; i < word.length(); i++) {
+            if (guess.contains(String.valueOf(word.charAt(i))) && !guess.equals(String.valueOf(word.charAt(i)))) {
+                chars += word.charAt(i);
+                chars += " ";
+            }
+        }
+        //System.out.println("Letras que acertaste pero no estan en su posicion:");
+        return chars;
+    }
+```
+
+Lo agregamos al metodo `start()` de la clase `Game`
+
+```java
+public void start() {
+        while (attempts > 0) {
+            System.out.println("Intenta adivinar la palabra");
+            String guess = System.console().readLine();
+            if (guess.equals(word)) {
+                System.out.println("¡Has adivinado la palabra!");
+                return;
+            } else {
+                attempts--;
+                hintGenerator.generateHint(word, guess);
+                System.out.println("La palabra es: " + hintGenerator.generateHint(word, guess));
+                System.out.println("¡Palabra incorrecta! Te quedan " + attempts + " intentos");
+            }
+        }
+        System.out.println("¡Has perdido! La palabra era: " + word);
+    }
+```
+
+Salida en consola :
+
+![gato](/PracticaCalificada3-CC3S2/images/gato.png)
+
+El feedback al jugador ha sido implementado.
+
+## Sprint 3
