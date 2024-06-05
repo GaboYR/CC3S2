@@ -22,6 +22,7 @@ public class Game {
                 return;
             } else {
                 attempts--;
+                hintGenerator.generateHint(word, guess);
                 System.out.println("¡Palabra incorrecta! Te quedan " + attempts + " intentos");
             }
         }

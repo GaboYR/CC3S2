@@ -144,3 +144,25 @@ public class WordSelectorTest {
 Salida de las pruebas:
 
 ![test1](/PracticaCalificada3-CC3S2/images/test1.png)
+
+### Metricas de cohesion
+
+**LCOM:**
+> Clase Game:
+Tiene 3 metodos, es decir, su |P| es combinatoria de 3 en 2 = 3
+|Q| = 1 + 1  = 2
+LCOM = 1
+> HintGenerator:
+Tiene 2 metodos, |P| = 1
+|Q| = 0
+LCOM = 1
+> WordSelector:
+|P| = 0, solo hay un metodo
+|Q| = 0
+LCOM = 0
+
+### Test de cobertura
+
+![coverage](/PracticaCalificada3-CC3S2/images/coverageS1.png)
+
+## Sprint 2
