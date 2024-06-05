@@ -3,9 +3,10 @@ package org.example;
 import java.util.*;
 
 public class StringUtils {
-    public static final String[] EMPTY_STRING_ARRAY = new String[0];
-    public static String[] substringsBetween(final String str,final String open,final String close) { 
-        if (str == null ||open.isEmpty() || close.isEmpty()) {
+    public final static String[] EMPTY_STRING_ARRAY = new String[0];
+
+    public static String[] substringsBetween(final String str, final String open, final String close) {
+        if (str == null || open == null || close == null || open.isEmpty() || close.isEmpty()) {
             return null;
         }
         final int strLen = str.length();
