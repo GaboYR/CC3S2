@@ -1,6 +1,8 @@
 package com.wordz;
 import com.wordz.domain.Word;
-import java.util.Scanner;
+
+import java.io.Console;
+
 public class Wordz {
     public static void main(String[] args) {
         // No implementado
@@ -18,17 +20,22 @@ public class Wordz {
         System.out.print("Money ");
         System.out.print("Noble ");
         System.out.print("Peace ");
-        System.out.println("\nAdivine la palabra");
-        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nAdivine la palabra : ");
+        // Variable para ller por consola
+        Console c = System.console();
         String palabra = new Word().getWord();
         //System.out.println(word.randomWord());
         // Implementando el contador de intentos 
         int intentos = 0;
         while (intentos < 6) {
             // Usuario inserta su palabra
-            System.out.println("Intento " + (intentos + 1) + " de 6");
-            String palabraUsuario = scanner.nextLine();
+            System.out.print("Intento " + (intentos + 1) + " de 6 : ");
+            String palabraUsuario = c.readLine();
             
+            if (palabraUsuario.length() != 5) {
+                throw new RuntimeException("Palabra de long 5");
+               
+            }
             // Se evalua la palabra
 
             if (palabraUsuario.equals(palabra)) {
@@ -49,6 +56,5 @@ public class Wordz {
             System.out.println("Perdiste");
             System.out.println("La palabra era: " + palabra);
         }
-        scanner.close();
     }
 }
