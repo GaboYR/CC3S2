@@ -131,7 +131,6 @@ Las interfaces estan dise;adas correctamente, no deberia haber problema con ello
 
 La clase `Game` depende tanto de las interfaces implementadas, y hay un manejo de dependencias mediante `DependencyInjector`
 
-
 ### 4. Aplicar TDD y Jacoco para desarrollar una nueva funcionalidad y refactorizar el código existente (4puntos)
 
 Para esta parte necesitamos incluir la dependencia de `jacoco` en nuestro gradle.
