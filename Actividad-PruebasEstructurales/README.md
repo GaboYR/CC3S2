@@ -23,7 +23,7 @@ Presenta un informe generado por [JaCoCo](www.jacoco.org/jacoco) u otra herramie
 * Presentacion generada por `jacoco`
   * Ejecutamos la intruccion `./gradlew jacocoTestReport` para generar el reporte.
   * Nos dirigimos a la ubicacion `/build/reports/jacoco/test/html`, ahi ubicamos el file `index.html`, lo abrimos con cualquier navegador y veremos lo siguiente.
-  * ![jacoco]()
+  * ![jacoco](/Actividad-PruebasEstructurales/images/jacoco.png)
   
 ## Ejercicio 3
 
@@ -41,7 +41,7 @@ y explicar la linea 1.
 
 * Al igual que la prueba anterior, ahora se verifica que las palabras terminen en `r`.
 * Ejecutamos `./gradlew jacocoTestReport` nuevamente para visualizar los resultados
-* Resultados : ![jacoco2](/)
+* Resultados : ![jacoco2](/Actividad-PruebasEstructurales/images/jacoco2.png)
   
 ## Ejercicio 4(Analisis de codigo y cobertura)
 
@@ -114,7 +114,7 @@ Agregamos 2 nuevas pruebas:
 Agregamos las pruebas al Test y ejecutamos el jacoco.
 
 Resultados :
-![jacoco3]()
+![jacoco3](/Actividad-PruebasEstructurales/images/jacoco3.png)
 
 ## Ejercicio 6(Exploracion y mejora)
 
