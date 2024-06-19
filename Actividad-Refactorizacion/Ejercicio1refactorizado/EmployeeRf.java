@@ -3,7 +3,7 @@ package Ejercicio1refactorizado;
 import java.util.HashMap;
 import java.util.HashSet;
 
-public class EmployeeManager {
+public class EmployeeRf {
     private HashMap<String, Employee> databaseEmployees = new HashMap<>();
 
     public void addEmployee(String name, String department) {
@@ -55,7 +55,7 @@ public class EmployeeManager {
     }
 
     public static void main(String[] args) {
-        EmployeeManager employeeManager = new EmployeeManager();
+        EmployeeRf employeeManager = new EmployeeRf();
         // Add employees
         employeeManager.addEmployee("Juan", "Ventas");
         employeeManager.addEmployee("Pedro", "Ventas");
