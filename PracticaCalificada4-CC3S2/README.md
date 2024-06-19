@@ -414,7 +414,6 @@ public class MutacionTest {
 }
 ```
 
-
 ### Stubs
 
 ### Fakes
@@ -422,7 +421,6 @@ public class MutacionTest {
 ### Pruebas de mutacion
 
 * Implementa pruebas de mutación para verificar la calidad de las pruebas unitarias.
-
 
 * ¿Qué herramienta utilizarías para realizar pruebas de mutación en este proyecto, y cómo la
 configurarías?
@@ -560,7 +558,6 @@ class SniperTower extends Tower {
 atacar a los enemigos dentro de su alcance?
 
 Despues de que las clases enemigas se hayan movido, evaluo sus posiciones actuales, y si estan en rango de torre, aplicamos el metodo `attack`.
-
 
 #### Sistema de oleadas
 
