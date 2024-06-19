@@ -9,7 +9,7 @@ import javax.swing.*;
  * Prof. Chua Hock Chuan, Nanyang Technological University
  */
 
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class GUI extends JFrame {
 
     public static final int CELL_SIZE = 100;

@@ -1,4 +1,4 @@
-package main.java.sprint3;
+package sprint3;
 public class DependencyInjector {
     public static IHintGenerator hintGenerator() {
         return new HintGenerator();

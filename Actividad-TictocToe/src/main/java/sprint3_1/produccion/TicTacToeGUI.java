@@ -12,7 +12,7 @@ import sprint3_1.produccion.TicTacToeGame.GameState;
  * Prof. Chua Hock Chuan, Nanyang Technological University
  */
 
-@SuppressWarnings("serial")
+
 public class TicTacToeGUI extends JFrame {
 
     public static final int CELL_SIZE = 100;

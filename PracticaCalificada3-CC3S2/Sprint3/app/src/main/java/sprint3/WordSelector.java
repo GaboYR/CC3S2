@@ -1,4 +1,4 @@
-package main.java.sprint3;
+package sprint3;
 public class WordSelector implements IWordSelector{
     // Array de palabras
     private final String[] words = {"avion","hola", "adios", "casa", "coche", "perro", "gato", "raton", "elefante", "caballo", "pajaro"};

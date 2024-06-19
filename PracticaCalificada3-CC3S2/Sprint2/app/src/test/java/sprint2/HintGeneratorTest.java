@@ -1,5 +1,4 @@
-package test.java.sprint2;
-
+package sprint2;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -12,7 +12,7 @@ import sprint3_0.produccion.Board.GameState;
  * Prof. Chua Hock Chuan, Nanyang Technological University
  */
 
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class GUI extends JFrame {
 
     public static final int CELL_SIZE = 100;

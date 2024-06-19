@@ -47,7 +47,7 @@
     ```
 
 3. Verificamos si podemos correr contenedores:
-   Corremos el comando `docker container run hello-world`
+Corremos el comando `docker container run hello-world`
 ![hello](/ConfiguracionDocker/images/HelloDocker.png)
 
 4. Ahora para verificar la instalacion de docker corremos el comando `docker container run rancher/cowsay Hello`.
@@ -83,13 +83,11 @@ Captura de procedimiento :
 
 1. Intentamos acceder al cluster usando `kubectl`, corramos el comando `kubectl config get-contexts`.
 
-    ![context](/ConfiguracionDocker/images/context.png)
-
+  ![context](/ConfiguracionDocker/images/context.png)
 2. Para verificar que `kubectl` este configurado para su uso con `minikube`, corremos `kubectl get nodes` para ver el numero de nodos posee el cluster.
 
-    ![nodes](/ConfiguracionDocker/images/nodes.png)
+![nodes](/ConfiguracionDocker/images/nodes.png)
 *Notar que la version del kubernetes es 1.30.0*
-
 3. Ejecucion de **"algo"** en el cluster mediante `nginx.yaml`.
 
 Formato del `.yaml`.
@@ -98,22 +96,22 @@ Formato del `.yaml`.
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx
-  labels:
-    app.kubernetes.io/name: proxy
+name: nginx
+labels:
+app.kubernetes.io/name: proxy
 spec:
-  containers:
-    - name: nginx
-      image: nginx:stable
-      ports:
-      - containerPort: 80
-        name: http-web-svc
+containers:
+- name: nginx
+image: nginx:stable
+ports:
+- containerPort: 80
+name: http-web-svc
 ```
 
 ```sh
 gabriel@192:ConfiguracionDocker$ kubectl apply -f nginx.yaml & kubectl --help | grep apply
 [1] 53379
-  apply           Apply a configuration to a resource by file name or stdin
+apply           Apply a configuration to a resource by file name or stdin
 pod/nginx unchanged
 [1]+  Done                    kubectl apply -f nginx.yaml
 ```
@@ -121,20 +119,19 @@ pod/nginx unchanged
 En este caso ya no sale `pod/nginx created` porque corri el comando 2 veces.
 4. Verificacion de la ejecucion del pod:
 
-```sh
-gabriel@192:ConfiguracionDocker$ kubectl get pods
-NAME    READY   STATUS    RESTARTS   AGE
-nginx   1/1     Running   0          8m13s
-```
-
-5. Para acceder al servidor Nginx corremos el comando `kubectl expose pod nginx --type=NodePort --port=80`
+  ```sh
+  gabriel@192:ConfiguracionDocker$ kubectl get pods
+  NAME    READY   STATUS    RESTARTS   AGE
+  nginx   1/1     Running   0          8m13s
+  ```
+Para acceder al servidor Nginx corremos el comando `kubectl expose pod nginx --type=NodePort --port=80`
 
 ```sh
 gabriel@192:ConfiguracionDocker$  kubectl expose pod nginx --type=NodePort --port=80
 service/nginx exposed
-```  
+```
 
-6. Para enumerar los servicios definidos en el cluster corremos el comando `kubectl get services`
+1. Para enumerar los servicios definidos en el cluster corremos el comando `kubectl get services`
 
 ```sh
 gabriel@192:ConfiguracionDocker$ kubectl get services 
@@ -149,10 +146,10 @@ Corremos el comando `minikube service nginx`
 ```sh
 gabriel@192:ConfiguracionDocker$ minikube service nginx
 |-----------|-------|-------------|---------------------------|
-| NAMESPACE | NAME  | TARGET PORT |            URL            |
-|-----------|-------|-------------|---------------------------|
-| default   | nginx |          80 | http://192.168.49.2:31387 |
-|-----------|-------|-------------|---------------------------|
+| NAMESPACE   | NAME    | TARGET PORT   | URL                         |
+| ----------- | ------- | ------------- | --------------------------- |
+| default     | nginx   | 80            | http://192.168.49.2:31387   |
+| ----------- | ------- | ------------- | --------------------------- |
 🎉  Opening service default/nginx in default browser...
 Opening in existing browser session.
 ```

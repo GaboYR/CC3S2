@@ -1,11 +1,13 @@
-package main.java.sprint3;
+package sprint3;
 public class HintGenerator implements IHintGenerator  {
     // Mostrar el tama;o de la palabra
-    public String generateHint(String word) {
+    @Override
+    public String generateHString(String word) {
         return "_ ".repeat(word.length());
     }
     // Mostrar la palabra con las letras acertadas y en su posicion
-    public String generateHint(String word, String guess) {
+    @Override
+    public String generateHString(String word, String guess) {
         String hint = "";
         // si la palabra contiene la letra
         for (int i = 0; i < word.length(); i++) {
@@ -19,6 +21,7 @@ public class HintGenerator implements IHintGenerator  {
     }
     // Funcion que muestra las letras que se han acertado
     // pero no estan en su posicion 
+    @Override
     public String showChars (String word, String guess) {
         String chars = "";
         for (int i = 0; i < word.length(); i++) {

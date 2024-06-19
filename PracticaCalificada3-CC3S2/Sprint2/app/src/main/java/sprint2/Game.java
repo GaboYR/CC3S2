@@ -1,12 +1,12 @@
 package sprint2;
 public class Game {
-    private final WordSelector wordSelector;
+    //private final WordSelector wordSelector;
     private final HintGenerator hintGenerator;
     private final String word;
     private final String hint;
     private int attempts;
     public Game(WordSelector wordSelector, HintGenerator hintGenerator) {
-        this.wordSelector = wordSelector;
+        //this.wordSelector = wordSelector;
         this.hintGenerator = hintGenerator;
         this.word = wordSelector.selectWord();
         this.hint = hintGenerator.generateHint(word);

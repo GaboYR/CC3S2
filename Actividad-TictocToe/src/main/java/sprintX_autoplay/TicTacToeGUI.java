@@ -13,7 +13,7 @@ import sprintX_autoplay.TicTacToeGame.GameState;
  * Prof. Chua Hock Chuan, Nanyang Technological University
  */
 
-@SuppressWarnings("serial")
+//@SuppressWarnings("serial")
 public class TicTacToeGUI extends JFrame {
 
     public static final int CELL_SIZE = 100;

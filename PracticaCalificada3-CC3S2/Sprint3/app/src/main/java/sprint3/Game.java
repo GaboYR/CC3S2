@@ -1,8 +1,7 @@
-package main.java.sprint3;
-import main.java.sprint3.IWordSelector;
-import main.java.sprint3.IHintGenerator;
+package sprint3;
+
 public class Game {
-    private IWordGenerator wordSelector;
+    private IWordSelector wordSelector;
     private IHintGenerator hintGenerator;
     private final String word;
     private final String hint;
@@ -11,7 +10,7 @@ public class Game {
         this.wordSelector = wordSelector;
         this.hintGenerator = hintGenerator;
         this.word = wordSelector.selectWord();
-        this.hint = hintGenerator.generateHint(word);
+        this.hint = hintGenerator.generateHString(word);
         this.attempts = 5;
         System.out.println("La palabra es: " + hint);
     }
@@ -24,8 +23,8 @@ public class Game {
                 return;
             } else {
                 attempts--;
-                hintGenerator.generateHint(word, guess);
-                System.out.println("La palabra es: " + hintGenerator.generateHint(word, guess));
+                hintGenerator.generateHString(word, guess);
+                System.out.println("La palabra es: " + hintGenerator.generateHString(word, guess));
                 System.out.println("¡Palabra incorrecta! Te quedan " + attempts + " intentos");
             }
         }
