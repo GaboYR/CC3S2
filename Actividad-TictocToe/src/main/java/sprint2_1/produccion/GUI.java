@@ -11,7 +11,6 @@ import sprint2_1.produccion.Board.Cell;
  * Prof. Chua Hock Chuan, Nanyang Technological University
  */
 
-@SuppressWarnings("serial")
 public class GUI extends JFrame {
 
     public static final int CELL_SIZE = 100;

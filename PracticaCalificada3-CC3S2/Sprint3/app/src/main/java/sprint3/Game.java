@@ -1,13 +1,11 @@
 package sprint3;
 
 public class Game {
-    private IWordSelector wordSelector;
     private IHintGenerator hintGenerator;
     private final String word;
     private final String hint;
     private int attempts;
     public Game(IWordSelector wordSelector, IHintGenerator hintGenerator) {
-        this.wordSelector = wordSelector;
         this.hintGenerator = hintGenerator;
         this.word = wordSelector.selectWord();
         this.hint = hintGenerator.generateHString(word);
