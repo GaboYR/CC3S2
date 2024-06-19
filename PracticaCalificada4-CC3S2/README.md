@@ -442,6 +442,8 @@ Para ello ejecutamos `./gradlew build y ./gradlew pitest
 
 Salida de pruebas:
 
+![testp1](/PracticaCalificada4-CC3S2/images/Testp1.png)
+
 ![pitest](/PracticaCalificada4-CC3S2/images/pitest.png)
 
 Aun falta reaizar pruebas, por eso se ve muy bajo porcentaje de cobertura.
