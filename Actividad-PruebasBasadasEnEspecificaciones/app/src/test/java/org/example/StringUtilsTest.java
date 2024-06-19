@@ -27,9 +27,14 @@ class StringUtilsTest {
     }
 
     // Ejercicio 3
+
     // Parametro str
-    // str como null
     
+    // str como null
+    @Test
+    void nullString() {
+        assertThat(StringUtils.substringsBetween(null, "a", "d")).isEqualTo(null);
+    }
     // str como vacío
     @Test
     void emptyString() {
@@ -37,9 +42,9 @@ class StringUtilsTest {
     }
 
     // str con longitud 1
-    //@Test
+    @Test
     void oneCharString() {
-        assertThat(StringUtils.substringsBetween("a", "a", "d")).isEqualTo(new String[] { });
+        assertThat(StringUtils.substringsBetween("a", "a", "d")).isEqualTo(null);
     }
 
     // str con longitud > 1
@@ -49,10 +54,14 @@ class StringUtilsTest {
     }
 
     // Parametro open
+
     // open como null
-    
+    @Test
+    void nullOpenTag() {
+        assertThat(StringUtils.substringsBetween("abcd", null, "d")).isEqualTo(null);
+    }
     // open como vacío
-    //@Test
+    @Test
     void emptyOpenTag() {
         assertThat(StringUtils.substringsBetween("abcd", "", "d")).isEqualTo(null);
     }
@@ -70,11 +79,14 @@ class StringUtilsTest {
     }
 
     // Parametro close
-    // close como null
-   
 
+    // close como null
+    @Test
+    void nullCloseTag() {
+        assertThat(StringUtils.substringsBetween("abcd", "a",null)).isEqualTo(null);
+    }
     // close como vacío
-    //@Test
+    @Test
     void emptyCloseTag() {
         assertThat(StringUtils.substringsBetween("abcd", "a", "")).isEqualTo(null);
     }
@@ -89,5 +101,51 @@ class StringUtilsTest {
     @Test
     void closeTagLongerThan1Char() {
         assertThat(StringUtils.substringsBetween("aabcddaabfddaab", "aa", "dd")).isEqualTo(new String[] { "bc", "bf" });
+    }
+
+    // Ahora combinaciones 
+
+    //str no contiene ni la etiqueta de open ni la de close.
+    @Test
+    void noOpenNorCloseTags() {
+        assertThat(StringUtils.substringsBetween("abcd", "x", "y")).isEqualTo(null);
+    }   
+    // str contiene la etiqueta open pero no la etiqueta close.
+    @Test
+    void openTagButNoCloseTag() {
+        assertThat(StringUtils.substringsBetween("abcd", "a", "x")).isEqualTo(null);
+    }
+    //str contiene la etiqueta de close pero no la etiqueta de open.
+    @Test
+    void closeTagButNoOpenTag() {
+        assertThat(StringUtils.substringsBetween("abcd", "x", "d")).isEqualTo(null);
+    }
+    //str contiene las etiquetas de open y close.
+    @Test
+    void openAndCloseTags() {
+        assertThat(StringUtils.substringsBetween("abcd", "a", "d")).isEqualTo(new String[] { "bc" });
+    }
+    //str contiene las etiquetas de open y close varias veces
+    @Test
+    void openAndCloseTagsMultipleTimes() {
+        assertThat(StringUtils.substringsBetween("abcdabcdab", "a", "d")).isEqualTo(new String[] { "bc", "bc" });
+    }
+    
+    // Paso 4
+    //str contiene etiquetas tanto de open como de close, sin caracteres entre ellas.
+    @Test
+    void openAndCloseTagsWithoutCharactersBetween() {
+        assertThat(StringUtils.substringsBetween("abcd", "a", "b")).isEqualTo(new String[] {""});
+    }
+    //str contiene etiquetas tanto de open como de close, con caracteres entre ellas.
+    @Test
+    void openAndCloseTagsWithCharactersBetween() {
+        assertThat(StringUtils.substringsBetween("abcd", "a", "c")).isEqualTo(new String[] { "b" });
+    }
+
+    @Test
+    void strIsNullOrEmpty() {
+        assertThat(StringUtils.substringsBetween(null, "a", "b")).isEqualTo(null);
+        assertThat(StringUtils.substringsBetween("", "a", "b")).isEqualTo(new String[]{});
     }
 }

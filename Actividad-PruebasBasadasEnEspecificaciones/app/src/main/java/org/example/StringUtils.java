@@ -5,8 +5,12 @@ import java.util.*;
 public class StringUtils {
     public final static String[] EMPTY_STRING_ARRAY = new String[0];
 
+    public static boolean isEmpty(final CharSequence cs) {
+        return cs == null || cs.isEmpty();
+    }
+
     public static String[] substringsBetween(final String str, final String open, final String close) {
-        if (str == null || open == null || close == null || open.isEmpty() || close.isEmpty()) {
+        if (str == null || isEmpty(open) || isEmpty(close)){
             return null;
         }
         final int strLen = str.length();
