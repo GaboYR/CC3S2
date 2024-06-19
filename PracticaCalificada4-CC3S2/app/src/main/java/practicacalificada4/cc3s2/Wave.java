@@ -36,9 +36,7 @@ public class Wave {
         // Mover los enemigos
         Point base = mapa.getBase();
         // Si su coordenada x no es igual a la base, mover a la derecha
-        for (Point p : positionEnemies) {
-            
-        }
+        
 
     }
 

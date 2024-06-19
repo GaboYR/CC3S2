@@ -526,15 +526,39 @@ public boolean isValidPosition(int x, int y) {
 
 * Diseña e implementa una clase SpeedyEnemy que herede de Enemy y tenga una velocidad
 mayor pero menos vida.
+
+```java
+class SpeedyEnemy extends Enemy {
+    public SpeedyEnemy() {
+        super(3, 75, 30);
+    }
+}
+```
+
 * ¿Cómo gestionarías el movimiento de los enemigos en el mapa, asegurando que sigan el
 camino predefinido?
+
+Primero tenemos que saber en que coord se encuentra la base, luego con una funcion, ir acercandonos.
 
 #### Torres con diferentes habilidades
 
 * Implementa una clase SniperTower que tenga un daño alto y un alcance muy largo pero una
 velocidad de disparo baja.
+
+```java
+// Clase SniperTower
+class SniperTower extends Tower {
+    public SniperTower() {
+        super(150, 10, 1); // daño, alcance, velocidad de disparo
+    }
+}
+```
+
 * ¿Cómo implementarías el método attack(`List<Enemy> enemies`) en la clase Tower para
 atacar a los enemigos dentro de su alcance?
+
+Despues de que las clases enemigas se hayan movido, evaluo sus posiciones actuales, y si estan en rango de torre, aplicamos el metodo `attack`.
+
 
 #### Sistema de oleadas
 

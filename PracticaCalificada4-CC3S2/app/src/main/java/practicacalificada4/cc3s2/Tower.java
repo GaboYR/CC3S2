@@ -42,6 +42,12 @@ class LaserTower extends Tower {
 }
 class ArrowTower extends Tower {
     public ArrowTower() {
-        super(25, 4, 1); // daño, alcance, velocidad de disparo
+        super(25, 4, 2); // daño, alcance, velocidad de disparo
+    }
+}
+// Clase SniperTower
+class SniperTower extends Tower {
+    public SniperTower() {
+        super(150, 10, 1); // daño, alcance, velocidad de disparo
     }
 }

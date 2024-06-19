@@ -49,3 +49,9 @@ class BossEnemy extends Enemy {
         super(1, 200, 50);
     }
 }
+// Clase SpeedyEnemy
+class SpeedyEnemy extends Enemy {
+    public SpeedyEnemy() {
+        super(3, 75, 30);
+    }
+}
