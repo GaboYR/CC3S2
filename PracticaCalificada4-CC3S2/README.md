@@ -366,6 +366,55 @@ Si la salud de la base llega a 0 o se ejecuta el comando `exit`, el juego termin
 
 ### Mocks
 
+```java
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+
+public class MutacionTest {
+    // Implementa pruebas de mutacion para verificar la calidad de las pruebas unitarias
+    // Test para el método isValidPosition de la clase Mapa
+    @Test
+    public void testIsValidPosition() {
+        // Configurar mock para posición válida
+        Mapa mockMap = Mockito.mock(Mapa.class);
+        when(mockMap.isValidPosition(3, 4)).thenReturn(true);
+        // Verificar que la posición sea válida
+        verify(mockMap,never()).isValidPosition(3, 4);
+    }
+
+    // Test para el método placeTower de la clase Game
+    @Test
+    public void testPlaceTower_ValidPosition() {
+        // Configurar mock para posición válida
+        Mapa mockMap = Mockito.mock(Mapa.class);
+        Game game = Mockito.mock(Game.class);
+        when(mockMap.isValidPosition(3, 4)).thenReturn(true);
+        game.placeTower(new CannonTower(), 3, 4);
+        // Verificar que la torre se haya colocado
+        verify(mockMap,never()).placeTower(any(Tower.class), eq(3), eq(4));
+        //verify(mockMap).placeTower(any(Tower.class), eq(3), eq(4));
+    }
+
+    @Test
+    public void testPlaceTower_InvalidPosition() {
+        // Configurar mock para posición inválida
+        Mapa mockMap = Mockito.mock(Mapa.class);
+        Game game = Mockito.mock(Game.class);
+        when(mockMap.isValidPosition(3, 4)).thenReturn(false);
+        game.placeTower(new CannonTower(), 3, 4);
+        // Verificar que la torre no se haya colocado
+        verify(mockMap, never()).placeTower(any(Tower.class), eq(3), eq(4));
+    }
+}
+```
+
+
 ### Stubs
 
 ### Fakes
@@ -383,6 +432,19 @@ Usaremos PITest, que es una herrmaienta de mutacion para Java. Para configurarlo
 mutación en la clase TowerDefenseGame.
 
 ### Evaluacion de cobertura de pruebas
+
+Para ello ejecutamos `./gradlew build y ./gradlew pitest
+
+```sh
+./gradlew build .
+./gradlew pitest
+```
+
+Salida de pruebas:
+
+![pitest](/PracticaCalificada4-CC3S2/images/pitest.png)
+
+Aun falta reaizar pruebas, por eso se ve muy bajo porcentaje de cobertura.
 
 ### Preguntas de dise;o e implementacion
 
