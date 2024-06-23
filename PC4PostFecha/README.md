@@ -469,7 +469,7 @@ public class MockitoTest {
 
 Resultado de pruebas:
 
-![mockTest](/images/mockTest.png)
+![mockTest](/PC4PostFecha/images/mockTest.png)
 
 ```java
 import static org.mockito.ArgumentMatchers.any;
