@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pc4postfecha.cc3s2.MapaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-06-23T09:58:53" hostname="192" time="0.013">
+  <properties/>
+  <testcase name="testPrintMapa()" classname="pc4postfecha.cc3s2.MapaTest" time="0.013"/>
+  <system-out><![CDATA[Mapa:
+[ ][ ][1][ ][ ]
+[ ][1][ ][ ][ ]
+[1][ ][ ][1][2]
+[ ][1][ ][ ][ ]
+[ ][ ][ ][ ][ ]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pc4postfecha.cc3s2.StubTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-06-23T09:58:54" hostname="192" time="0.002">
+  <properties/>
+  <testcase name="testPlaceTower_ValidPosition()" classname="pc4postfecha.cc3s2.StubTest" time="0.001"/>
+  <testcase name="testPlaceTower_InvalidPosition()" classname="pc4postfecha.cc3s2.StubTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

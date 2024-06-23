@@ -15,7 +15,7 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'org.assertj:assertj-core:3.25.3'
-    testImplementation 'org.mockito:mockito-core:3.6.28'
+    testImplementation 'org.mockito:mockito-core:3.11.2'
     pitest 'org.pitest:pitest-junit5-plugin:1.1.0'
 }
 
@@ -24,7 +24,8 @@ test {
 }
 
 pitest {
-    targetClasses = ['practicacalificada4.cc3s2*'] // Paquete de clases a mutar
+    targetClasses = ['pc4postfecha.cc3s2.*'] // Paquete de clases a mutar
+    targetTests = ['pc4postfecha.cc3s2.*'] // Paquete de pruebas a ejecutar
     mutators = ['DEFAULTS'] // Conjunto de mutadores [OLD_DEFAULTS, DEFAULTS, STRONGER, ALL]
     outputFormats = ['HTML'] // Formato de salida del informe
     timestampedReports = false // Deshabilitar informes con marca de tiempo para facilitar la navegación
