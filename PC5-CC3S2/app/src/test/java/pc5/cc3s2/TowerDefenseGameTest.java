@@ -1,59 +1,42 @@
 package pc5.cc3s2;
 
-
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
-
-
+import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 
 public class TowerDefenseGameTest {
-    // Mock para la clase TowerDefenseGame
-    @Mock
-    private TowerDefenseGame towerDefenseGame;
-    // Mock para la clase Map
+    
     @Mock
     private Map mockMap;
-    // Mock para la clase Player
-    @Mock
-    private Player player;
-    // Mock para la clase Wave
-    @Mock
-    private Wave wave;
-    
-    @BeforeEach
-    public void setUp() {
-        towerDefenseGame = new TowerDefenseGame();
-        mockMap = Mockito.mock(Map.class);
-        player = Mockito.mock(Player.class);
-        wave = Mockito.mock(Wave.class);
-    }
 
-    // Pruebas para map
+    @Mock
+    private Player mockPlayer;
+
+    @Mock
+    private Wave mockWave;
+
+    @InjectMocks
+    private TowerDefenseGame towerDefenseGame;
+
+    @BeforeEach
+    public void setup() {
+        mockMap = mock(Map.class);
+        mockPlayer = mock(Player.class);
+        mockWave = mock(Wave.class);
+        towerDefenseGame = new TowerDefenseGame(mockMap, mockPlayer);
+    }
+    // Test para verificar torre en (0, 0)
+    // Usando mocks para simular el mapa y el jugador
     @Test
     public void testPlaceTower() {
         Tower tower = new Tower('T');
         towerDefenseGame.placeTower(tower, 0, 0);
-        verify(mockMap,never()).placeTower(eq(tower), eq(0), eq(0));
-    }
-    // Pruebas para player
-    @Test
-    public void testGameState() {
-        when(player.getScore()).thenReturn(0);
-        when(player.getBaseHealth()).thenReturn(100);
-        towerDefenseGame.gameState();
-        verify(player,never()).getScore();
-        verify(player,never()).getBaseHealth();
-    }
-    // Pruebas para waves
-    @Test
-    public void testStartWave() {
-        towerDefenseGame.startWave();
-        verify(wave,never()).start();
+        verify(mockMap).placeTower(eq(tower), eq(0), eq(0));
+        when(mockMap.getTile(0, 0)).thenReturn('T');
+        assertEquals('T', mockMap.getTile(0, 0));
     }
 }

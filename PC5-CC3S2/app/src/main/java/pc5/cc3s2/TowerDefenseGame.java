@@ -12,6 +12,11 @@ public class TowerDefenseGame {
         this.player = new Player();
         this.waves = new ArrayList<>();
     }
+    public TowerDefenseGame(Map map, Player player) {
+        this.map = map;
+        this.player = player;
+        this.waves = new ArrayList<>();
+    }
 
     public void placeTower(Tower tower, int x, int y) {
         map.placeTower(tower, x, y);
@@ -21,6 +26,10 @@ public class TowerDefenseGame {
         Wave wave = new Wave();
         waves.add(wave);
         wave.start();
+    }
+
+    public List<Wave> getWaveList() {
+        return waves;
     }
 
     public void gameState() {

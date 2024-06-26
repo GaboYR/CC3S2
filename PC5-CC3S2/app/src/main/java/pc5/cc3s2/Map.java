@@ -15,6 +15,9 @@ public class Map {
     public void placeTower(Tower tower, int x, int y) {
         grid[x][y] = tower.getSymbol();
     }
+    public char getTile(int x, int y) {
+        return grid[x][y];
+    }
 
     @Override
     public String toString() {

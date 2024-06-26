@@ -320,46 +320,482 @@ minikube service tower-defense-deployment-749d7bbdcd-8tmb5
 * * Mocks sirven para verificar llamadas a ciertos metodos.
 * * Stubs brindan respuestas a las llamadas por prueba.
 * * Fakes funcionan de forma independiente pero no necesariamente simula toda la funcionalidad del objeto.
-
-Implementacion de los test con Mockito
+* Escribe pruebas unitarias para la clase TowerDefenseGame utilizando Mockito para simular las dependencias de Map, Player y Wave
 
 ```java
-@BeforeEach
-    public void setUp() {
-        towerDefenseGame = new TowerDefenseGame();
-        mockMap = Mockito.mock(Map.class);
-        player = Mockito.mock(Player.class);
-        wave = Mockito.mock(Wave.class);
-    }
+public class TowerDefenseGameTest {
+    
+    @Mock
+    private Map mockMap;
 
-    // Pruebas para map
+    @Mock
+    private Player mockPlayer;
+
+    @Mock
+    private Wave mockWave;
+
+    @InjectMocks
+    private TowerDefenseGame towerDefenseGame;
+
+    @BeforeEach
+    public void setup() {
+        mockMap = mock(Map.class);
+        mockPlayer = mock(Player.class);
+        mockWave = mock(Wave.class);
+        towerDefenseGame = new TowerDefenseGame(mockMap, mockPlayer);
+    }
+    // Test para verificar torre en (0, 0)
+    // Usando mocks para simular el mapa y el jugador
     @Test
     public void testPlaceTower() {
         Tower tower = new Tower('T');
         towerDefenseGame.placeTower(tower, 0, 0);
         verify(mockMap).placeTower(eq(tower), eq(0), eq(0));
+        when(mockMap.getTile(0, 0)).thenReturn('T');
+        assertEquals('T', mockMap.getTile(0, 0));
     }
-    // Pruebas para player
+}
+```
+
+* Implementa pruebas de integración que verifiquen la interacción entre las clases principales (TowerDefenseGame, Map, Player, Wave). Utiliza Mockito para controlar y verificar el comportamiento de las dependencias en estas pruebas.
+Resultados de las pruebas :
+
+```java
+public class TDGIntegrationTest {
+
+    @Mock
+    private Map mockMap;
+
+    @Mock
+    private Player mockPlayer;
+
+    @InjectMocks
+    private TowerDefenseGame towerDefenseGame;
+
+    @BeforeEach
+    public void setup() {
+        mockMap = mock(Map.class);
+        mockPlayer = mock(Player.class);
+
+        towerDefenseGame = new TowerDefenseGame(mockMap, mockPlayer);
+    }
+
     @Test
-    public void testGameState() {
-        when(player.getScore()).thenReturn(0);
-        when(player.getBaseHealth()).thenReturn(100);
-        towerDefenseGame.gameState();
-        verify(player).getScore();
-        verify(player).getBaseHealth();
+    public void testPlaceTower() {
+        Tower tower = new Tower('T');
+        towerDefenseGame.placeTower(tower, 0, 0);
+
+        // Verificar que el método placeTower fue llamado en el mock
+        verify(mockMap).placeTower(eq(tower), eq(0), eq(0));
+
+        // Configurar el comportamiento del mock para devolver el símbolo correcto
+        when(mockMap.getTile(0, 0)).thenReturn('T');
+
+        // Verificar que el símbolo es el correcto
+        assertEquals('T', mockMap.getTile(0, 0));
     }
-    // Pruebas para waves
+
     @Test
     public void testStartWave() {
         towerDefenseGame.startWave();
-        verify(wave).start();
+
+        // Verificar que una nueva ola fue añadida
+        List<Wave> waves = towerDefenseGame.getWaveList();
+        assertEquals(1, waves.size());
+
+        // Verificar que la ola está activa
+        assertTrue(waves.get(0).isFinished());
+    }
+
+    @Test
+    public void testGameState() {
+        when(mockPlayer.getScore()).thenReturn(100);
+        when(mockPlayer.getBaseHealth()).thenReturn(50);
+
+        towerDefenseGame.gameState();
+
+        // Verificar que los métodos getScore y getBaseHealth fueron llamados
+        verify(mockPlayer).getScore();
+        verify(mockPlayer).getBaseHealth();
+    }
+}
+```
+
+Resultados y explicacion de las pruebas:
+
+![ockTestAll](/PC5-CC3S2/images/MockTestAll.png)
+
+Explicare este test
+
+```java
+@Test
+    public void testPlaceTower() {
+        Tower tower = new Tower('T');
+        towerDefenseGame.placeTower(tower, 0, 0);
+        verify(mockMap).placeTower(eq(tower), eq(0), eq(0));
+        when(mockMap.getTile(0, 0)).thenReturn('T');
+        assertEquals('T', mockMap.getTile(0, 0));
     }
 ```
 
-Resultados de las pruebas :
+Lo que hacemos es primero inicializar una clase `Tower`, lo importante aqui es el tipo de torre, y se insertara en el mock de `towerDefenseGame`, luego con `verify` evaluamos si en el mock de mapa se coloco la torre en la pos 0,0.
+Con `when` se evalua la funcion `getTile`, debe retornar un caracter, en este caso, `T`.
+Y un `assertEquals` para ver si `T` esta ubicado en la posicion (0,0) del mock de Map
 
-![mocktest](/images/MockTest.png)
+Las otras pruebas funcionan de forma similar.
 
 ## Pruebas de mutacion
 
-## Dise;o por contrato
+* Define qué son las pruebas de mutación y cómo contribuyen a la mejora de la calidad del software. Explica los tipos de operadores de mutación y su propósito.
+
+Una prueba de mutacion es una forma de medir las pruebas `alterando` partes del codigo original de forma intencionada con el fin de encontrar fallas y susceptibilidades. Hay mutaciones del tipo aritmetico(por ejm cambiar un signo, por ejm de `+` a `-`), otro del tipo logico (`==` por `!=`), entre otros.
+
+* Discute las métricas utilizadas para evaluar la efectividad de las pruebas de mutación, como la tasa de mutación (mutation score) y la cobertura de mutación.
+
+Para ello, vamos a ver las mutaciones, entonces debemos ejecutar `./gradlew build pitest`
+
+Pero antes debemos construir el projecto, eso lo hacemos con `./gradlew build`
+
+![build](/PC5-CC3S2/images/build.png)
+
+Resultados de la prueba:
+
+![pitest](/PC5-CC3S2/images/pitest.png)
+
+Vemos que arroja 6 clases, clases contenidas en el `package pc5.cc3s2`, algunas con lineas de cobertura del 0% a 100%, cobertura de mutacion del 0 a 50% y fuerza de prueba de 33 a 100%
+
+## Design by contract
+
+* Explica el concepto de diseño por contrato y cómo se aplica en el desarrollo de software. Discute las diferencias entre precondiciones, postcondiciones e invariantes.
+
+Los dise;os por contrato sirven para acordar y definir responsabilidades de acuerdo a las pre y postcondiciones.
+
+Precondiciones son condiciones que deben cumplirse antes de pasar por un metodo
+
+Post condiciones, lo mismo pero debe cumplirse despues de ser pasada por un metodo
+
+Invariantes aplica para antes y despues.
+
+* Describe cómo el diseño por contrato puede mejorar la robustez y mantenibilidad del
+código.
+
+Bueno, mejora la robustez debido a la documentacion facilita la lectura de ciertos metodos, eso contribuye a la legibilidad y facilita su comprension.
+
+Mantenible porque ya se acordaron pre post e invariantes, entonces ya hay cierta especificacion, eso de la mano con refactorizacion y otras tecnicas de codigo limpio permiten mantenibilidad y escalabilidad.
+
+* Aplica el diseño por contrato a la clase Tower. Define las precondiciones, postcondiciones e invariantes de los métodos principales de la clase.
+
+Codigo de `Tower`
+
+```java
+public class Tower {
+    private char symbol;
+
+    public Tower(char symbol) {
+        this.symbol = symbol;
+    }
+
+    public char getSymbol() {
+        return symbol;
+    }
+}
+```
+
+Aplicando DBC(design by contract):
+
+```java
+public class Tower {
+    private char symbol;
+
+    /**
+     * Construye una clase torre con tipo de torre.
+     * 
+     * @param symbol es el simbolo, para este caso se cuenta con Cannon, Laser, Arrow y SniperTower
+     */
+    public Tower(char symbol) {
+        this.symbol = symbol;
+    }
+
+    /**
+     * Retorna el simbolo que representa la torre.
+     * 
+     * @return el simbolo de la torre
+     */
+    public char getSymbol() {
+        return symbol;
+    }
+}
+```
+
+De momento hay invariantes, pero podemos establecer de precondicion que el simbolo no sea nulo o de mas de 1 caracter y perteneza a una letra de las clases hijas
+
+```java
+  assert isCharacter(symbol): "symbol debe ser un caracter no nulo"
+```
+
+Para la postcondicion, podemos acordar que el simbolo a retornar sea de uno de los tipos de clase Derivada de la Clase Torre y coincida con la letra asignada.
+
+```java
+  assert symbol == 'T' || symbol == 'C' || symbol == 'L' || symbol == 'A' || symbol == 'S'
+```
+
+* Escribe pruebas unitarias que verifiquen el cumplimiento de los contratos definidos para la clase Tower. Utiliza herramientas como Java Assertions para implementar estas verificaciones.
+
+Clase `TowerTest` con documentacion
+
+```java
+public class TowerTest {
+
+    @Test
+    public void testTowerConstructorWithValidSymbols() {
+        // Precondición: El símbolo debe pertenecer a 'T', 'C', 'L', 'A', 'S'
+        char[] validSymbols = {'T','C', 'L', 'A', 'S'};
+
+        for (char symbol : validSymbols) {
+            Tower tower = new Tower(symbol);
+            // Postcondición: El símbolo de la torre debe ser el dado previamente
+            assertEquals(symbol, tower.getSymbol(), "El símbolo no coincide");
+        }
+    }
+
+    @Test
+    public void testTowerConstructorWithInvalidSymbol() {
+        // Precondición: El símbolo no pertenece a las clases válidas
+        char invalidSymbol = 'X';
+
+        Tower tower = new Tower(invalidSymbol);
+        // Postcondición: Simbolo invalido no debe ser aceptado
+        assertNotEquals('T', tower.getSymbol(), "El símbolo no coincide");
+    }
+}
+```
+
+Resultados de la prueba:
+
+![towerTest](/PC5-CC3S2/images/TowerTest.png)
+
+* Realiza una revisión de código para asegurarte de que todas las clases del proyecto Tower Defense siguen los principios del diseño por contrato. Documenta cualquier ajuste o mejora necesaria en el código.
+
+Revisamos cada codigo del projecto:
+
+* Clase `Enemy`
+
+```java
+public class Enemy {
+    private int speed; // número de celdas por turno
+    private int health;
+    private int reward;
+    // Constructores, getters y setters
+    public Enemy(int speed, int health, int reward) {
+        this.speed = speed;
+        this.health = health;
+        this.reward = reward;
+    }
+    public int getSpeed() {
+        return speed;
+    }
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+    public int getHealth() {
+        return health;
+    }
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    public int getReward() {
+        return reward;
+    }
+    public void setReward(int reward) {
+        this.reward = reward;
+    }
+    public void takeDamage(int damage) {
+        health -= damage;
+    }
+}
+```
+
+Podemos agregar como precondicion que `setHealth` reciba un parametro mayor a cero.
+Tambien que el metodo `takeDamage` no reste da;o si es que la salud sea mayor o igual al da;o.
+
+```java
+public void setHealth(int health) {
+  assert health > 0: "Salud no puede ser negativa";
+  this.health = health;
+}
+public void takeDamage(int damage) {
+  assert health >= damage : "Da;o no puede exceder a la salud actual"
+  health -= damage;
+}
+```
+
+Clase `Map`
+
+```java
+public class Map {
+    private char[][] grid;
+
+    public Map() {
+        grid = new char[5][5];
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                grid[i][j] = ' ';
+            }
+        }
+    }
+
+    public void placeTower(Tower tower, int x, int y) {
+        grid[x][y] = tower.getSymbol();
+    }
+    public char getTile(int x, int y) {
+        return grid[x][y];
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (char[] row : grid) {
+            for (char cell : row) {
+                sb.append("[").append(cell).append("]");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+}
+```
+
+Precondiciones: que la posicion de la torre este en el rango del mapa.
+
+```java
+public void placeTower(Tower tower, int x, int y) {
+        assert  x >= 0 && x < grid.length && y >= 0 && y < grid[0].length : "Coordenadas fuera de los límites del mapa.";
+        grid[x][y] = tower.getSymbol();
+}
+        
+
+    public char getTile(int x, int y) {
+        assert x > 0 && x < grid.length && y > 0 || y < grid[0].length : "Coordenadas fuera de los límites del mapa.";
+        return grid[x][y];
+    }
+```
+
+Clase `Player`
+
+```java
+  public class Player {
+    private int score;
+    private int baseHealth;
+
+    public Player() {
+        this.score = 0;
+        this.baseHealth = 100;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getBaseHealth() {
+        return baseHealth;
+    }
+}
+```
+
+Aplicando DBC
+
+```java
+public void addScore(int score) {
+        assert score >= 0 : "El puntaje a a;adir debe ser no negativo.";
+        this.score += score;
+    }
+
+    public int getBaseHealth() {
+        return baseHealth;
+    }
+
+    public void reduceBaseHealth(int amount) {
+        assert amount >= 0 : "La cantidad a reducir debe ser no negativa.";
+        assert baseHealth - amount >= 0 : "La salud base debe ser mayor al da;o";
+        this.baseHealth -= amount;
+    }
+```
+
+Clase `Tower` ya se le aplico DBC.
+
+Clase `TowerDefenseGame`
+
+```java
+public class TowerDefenseGame {
+    private Map map;
+    private Player player;
+    private List<Wave> waves;
+
+    public TowerDefenseGame() {
+        this.map = new Map();
+        this.player = new Player();
+        this.waves = new ArrayList<>();
+    }
+    public TowerDefenseGame(Map map, Player player) {
+        this.map = map;
+        this.player = player;
+        this.waves = new ArrayList<>();
+    }
+
+    public void placeTower(Tower tower, int x, int y) {
+        map.placeTower(tower, x, y);
+    }
+
+    public void startWave() {
+        Wave wave = new Wave();
+        waves.add(wave);
+        wave.start();
+    }
+
+    public List<Wave> getWaveList() {
+        return waves;
+    }
+
+    public void gameState() {
+        System.out.println(map);
+        System.out.println("Puntuación: " + player.getScore());
+        System.out.println("Vida de la base: " + player.getBaseHealth());
+    }
+    public static void main(String[] args) {
+        TowerDefenseGame game = new TowerDefenseGame();
+        game.gameState();
+    }
+}
+```
+
+Con DBC
+
+```java
+//Aqui se apliacara una 1ra precondicion y si la pasa entonces ira a las precondiciones la clase map.
+public void placeTower(Tower tower, int x, int y) {
+        assert x >= 0 && y >= 0 : "Las posiciones deben ser positivas o cero"
+        map.placeTower(tower, x, y);
+    }
+```
+
+Clase `Wave`
+
+```java
+public class Wave {
+    public void start() {
+        System.out.println("Oleada iniciada!");
+    }
+    public boolean isFinished() {
+        return true;
+    }
+}
+```
+
+con DBC
+
+```java
+public void start() {
+        this.active = true;
+        assert this.active : "La ola debe estar activa después de iniciar.";
+    }
+```
