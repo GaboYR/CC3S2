@@ -2,6 +2,8 @@
 
 Realizaremos la actividad correspondiente al Stage1 y 2 ubicados en `https://training.play-with-docker.com/`
 
+Para la parte de Stage1,trabajaremos con `Getting Started Walk-through for IT Pros and System Administrators`, mientras que para el Stage2 trabajaremos con `Getting Started Walk-through for Developers`
+
 ## Stage 1(The basics)
 
 Este stage tiene 2 secciones
@@ -21,14 +23,14 @@ Esta seccion conta con 3 partes
 
 Veremos en el navegador
 
-![im1](/images/im1.png)
+![im1](/PlayWithDocker/images/im1.png)
 
 ##### 1.0 Running your first container
 
 En esta seccion, como buena costumbre de *lenguaje de programacion*, ***ejecutaremos*** un `hello-world`.
 Nos muestra como ejecutar la imagen `hello-world` que hicimos en clase.
 
-![im2](/images/im2.png)
+![im2](/PlayWithDocker/images/im2.png)
 
 ##### 1.1 Docker Images
 
@@ -40,7 +42,7 @@ docker image pull alpine
 
 Salida en consola:
 
-![im3](/images/im3.png)
+![im3](/PlayWithDocker/images/im3.png)
 
 Para ver que imagenes tenemos en el sistema corremos el comando
 
@@ -50,7 +52,7 @@ docker image ls
 
 Salida en consola:
 
-![im4](/images/im4.png)
+![im4](/PlayWithDocker/images/im4.png)
 
 Podemos ver la imagen traida con `pull` y la de `hello-world` que fue ejecutada previamente.
 
@@ -58,13 +60,13 @@ Podemos ver la imagen traida con `pull` y la de `hello-world` que fue ejecutada 
 
 Ejecutamos el comando
 
-```sh
+```bash
 docker container run alpine ls -l
 ```
 
 Salida en consola:
 
-![im5](/images/im5.png)
+![im5](/PlayWithDocker/images/im5.png)
 
 Como funciona este comando
 
@@ -860,7 +862,7 @@ verify: Service converged
 
 Veremos el cambio de nro de replicas a 5, para verificarlo ponemos el comando
 
-```sh
+```bash
 [node1] (local) root@192.168.0.23 ~/example-voting-app
 $ docker stack services voting_stack
 ID             NAME                  MODE         REPLICAS   IMAGE                                          PORTS
@@ -878,22 +880,30 @@ En conclusion, Docker Swarm permite escalar los servicios de una aplicacion rapi
 
 Se vera como integrar Docker en una infraestructura de aplicacion ya existente.
 
-### Security
+### Live Debugging Node.js with Docker
 
-#### Seccomp profiles
+Para esta parte debemos trabajar de forma local
 
-#### Linux Kernel Capabilities and Docker
+Creamos un directorio `/app` y creamos los archivos necesarios para continuar.
 
-### Networking
+#### Start the app
 
-#### Docker Networking Hands-on Lab
+Veamos la estructura de nuestro trabajo con `tree`
 
-### Orchestration
+```sh
+tree -d
+.
+├── app
+│   └── node_modules
+└── images
+```
 
-#### Docker Orchestration Hands-on Lab
+Y dentro de app tenemos
 
-And for a bonus, you can work through a comprehensive Orchestration Workshop
+![tree](/PlayWithDocker/images/treeapp.png)
 
-#### Part 1
+Ejecutamos `docker-compose up`
 
-#### Part 2
+![im](/PlayWithDocker/images/dockup.png)
+
+Vamos al navegador y veremos los mensajes del `app.js` cambiando cada 2 segundos.
