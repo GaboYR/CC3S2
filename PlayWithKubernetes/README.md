@@ -174,7 +174,7 @@ construimos y corremos nuestros contenedores.
 
 Salida en consola:
 
-![err](/images/error.png)
+![err](/PlayWithKubernetes/images/error.png)
 
 Ahi se tira un error que no termina, mientras espero podemos revisar el contenido del directorio `/dockerCoins`
 
