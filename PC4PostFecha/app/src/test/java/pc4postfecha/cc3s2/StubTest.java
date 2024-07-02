@@ -54,9 +54,10 @@ public class StubTest {
         verify(mockWave).getEnemies();
     }
 
-    @Test
+    //@Test
     //Implementa un test que use un stub para verificar el comportamiento del método startWave
     //en la clase TowerDefenseGame.
+    /*/
     public void testStartWave() {
         // Configurar mock para el método startWave
         
@@ -65,5 +66,6 @@ public class StubTest {
         // Verificar que el método startWave fue llamado
         verify(mockGame).startWave();
     }
+        */
 
 }

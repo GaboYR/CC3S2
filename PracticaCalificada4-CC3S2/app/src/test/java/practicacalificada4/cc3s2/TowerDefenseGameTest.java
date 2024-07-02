@@ -5,12 +5,13 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
 import org.mockito.Mockito;
 
 import org.junit.jupiter.api.Test;
 
 public class TowerDefenseGameTest {
-
+    
     @Test
     public void testPlaceTower_ValidPosition() {
         // Configurar mock para posición válida
