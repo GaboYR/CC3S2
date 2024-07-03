@@ -1,0 +1,5 @@
+version: '1'
+services:
+  sistema-gestor-service:
+    build: .
+    container_name: sistema-container
