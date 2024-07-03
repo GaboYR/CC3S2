@@ -7,6 +7,14 @@ Implementaremos un sistema de uestra de alertas, la de acciones automaticas y no
 
 Si el tiempo me alcanza, implementare el sistema de notificaciones(interfaz).
 
+## Actividades para el final
+
+Play with docker: <https://github.com/GaboYR/CC3S2/tree/main/PlayWithDocker>
+
+Play with Kubernetes: <https://github.com/GaboYR/CC3S2/tree/main/PlayWithKubernetes>
+
+Microservicios V3: <https://github.com/GaboYR/CC3S2/tree/main/Docker-Kubernetes-Microservicios>
+
 ## Sprint1
 
 ### Dise;o e implementacion inicial
