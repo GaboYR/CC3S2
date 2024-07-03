@@ -1,6 +1,6 @@
 package examenfinal.sprint2;
 
-public class Humedad implements Alerta{
+public class Humedad implements Alerta, Notificaciones, Acciones {
     private double porcentajeHumedad;
     // constructores
     public Humedad() {
@@ -19,5 +19,13 @@ public class Humedad implements Alerta{
         } else {
             return "Humedad normal";
         }
+    }
+    @Override
+    public String showNotification(){
+        return "Notificación de humedad";
+    }
+    @Override
+    public String showAction(){
+        return "Acción de humedad";
     }
 }

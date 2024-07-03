@@ -1,6 +1,6 @@
 package examenfinal.sprint2;
 
-public class Viento implements Alerta{
+public class Viento implements Alerta, Notificaciones, Acciones{
     private double velocidadViento;
     // constructores
     public Viento(){
@@ -20,5 +20,13 @@ public class Viento implements Alerta{
         } else {
             return "Viento normal";
         }
+    }
+    @Override
+    public String showNotification(){
+        return "Notificación de viento";
+    }
+    @Override
+    public String showAction(){
+        return "Cerrar persianas";
     }
 }

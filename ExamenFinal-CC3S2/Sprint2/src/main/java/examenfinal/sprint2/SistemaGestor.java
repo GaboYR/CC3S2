@@ -28,8 +28,10 @@ public class SistemaGestor {
         System.out.println(viento.showAlerta());
         System.out.println(humedad.showAlerta());
         System.out.println(presion.showAlerta());
+
+        // Mostrar notificaciones
+        
+        System.out.println(temperatura.showNotification());
     }
-    public void showAlertaTemperatura(Temperatura temperatura){
-        temperatura.showAlerta();   
-    }
+    
 }
