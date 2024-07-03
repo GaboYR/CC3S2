@@ -1,0 +1,43 @@
+version: '3'
+services:
+  game-service:
+    build:
+      context: ./services/GameService
+    image: game-service
+    container_name: game-service
+    depends_on:
+      - map-service
+      - player-service
+      - tower-service
+      - wave-service
+
+  map-service:
+    build:
+      context: ./services/MapService
+    image: map-service
+    container_name: map-service
+
+  player-service:
+    build:
+      context: ./services/PlayerService
+    image: player-service
+    container_name: player-service
+
+  tower-service:
+    build:
+      context: ./services/TowerService
+    image: tower-service
+    container_name: tower-service
+
+  wave-service:
+    build:
+      context: ./services/WaveService
+    image: wave-service
+    container_name: wave-service
+
+networks:
+  game-network:
+    driver: bridge
+volumes:
+  game-data:
+    driver: local
